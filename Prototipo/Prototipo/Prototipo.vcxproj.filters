@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2d.cpp">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dBaseShape.cpp">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dCircle.cpp">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dConvexPoly.cpp">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dEdge.cpp">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dJoint.cpp">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dPolygon.cpp">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dRect.cpp">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\b2BroadPhase.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\b2CollideCircle.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\b2CollideEdge.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\b2CollidePolygon.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\b2Collision.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\b2Distance.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\b2DynamicTree.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\b2TimeOfImpact.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\Shapes\b2ChainShape.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\Shapes\b2CircleShape.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\Shapes\b2EdgeShape.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\Shapes\b2PolygonShape.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Common\b2BlockAllocator.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Common\b2Draw.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Common\b2Math.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Common\b2Settings.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Common\b2StackAllocator.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Common\b2Timer.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\b2Body.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\b2ContactManager.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\b2Fixture.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\b2Island.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\b2World.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\b2WorldCallbacks.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2ChainAndCircleContact.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2ChainAndPolygonContact.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2CircleContact.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2Contact.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2ContactSolver.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2EdgeAndCircleContact.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2EdgeAndPolygonContact.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2PolygonAndCircleContact.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2PolygonContact.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2DistanceJoint.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2FrictionJoint.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2GearJoint.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2Joint.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2MotorJoint.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2MouseJoint.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2PrismaticJoint.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2PulleyJoint.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2RevoluteJoint.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2RopeJoint.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2WeldJoint.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2WheelJoint.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Rope\b2Rope.cpp">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Rope</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\triangle\del_impl.cpp">
+      <Filter>addons\ofxBox2d-master\libs\triangle</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons">
+      <UniqueIdentifier>{ca744f7b-1c92-47ac-a443-f090804b7f48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBox2d-master">
+      <UniqueIdentifier>{80bcfccf-17d7-443d-944b-2fd3131a4387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBox2d-master\src">
+      <UniqueIdentifier>{838b32d9-0a21-46fa-b47c-a32d1eee547c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBox2d-master\libs">
+      <UniqueIdentifier>{7cc82703-92d4-4312-8624-bee9a0aa0e4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBox2d-master\libs\Box2D">
+      <UniqueIdentifier>{f1895cd7-3e15-45ae-b193-de6f00d54efe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBox2d-master\libs\Box2D\Collision">
+      <UniqueIdentifier>{e36cd1c7-b8a3-4657-8513-ffcf27b239d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBox2d-master\libs\Box2D\Collision\Shapes">
+      <UniqueIdentifier>{49554d70-80bb-4cf1-a260-b2f7ff8a5bfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBox2d-master\libs\Box2D\Common">
+      <UniqueIdentifier>{e67f67f1-6353-4335-852c-91fb6da47f82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBox2d-master\libs\Box2D\Dynamics">
+      <UniqueIdentifier>{e5874704-c70e-435f-8153-175240c6f3ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts">
+      <UniqueIdentifier>{cc624c54-7e5e-4855-9e81-6f825910d9b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints">
+      <UniqueIdentifier>{ef6d8af7-5d4f-4bdd-8479-3b419de0f62b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBox2d-master\libs\Box2D\Rope">
+      <UniqueIdentifier>{d1a9150b-2086-48f4-84ab-ddb6dcb9077f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxBox2d-master\libs\triangle">
+      <UniqueIdentifier>{52bf5cc4-f781-4308-9393-de62c59e1190}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2d.h">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dBaseShape.h">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dCircle.h">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dContactListener.h">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dConvexPoly.h">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dEdge.h">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dJoint.h">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dPolygon.h">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dPolygonUtils.h">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dRect.h">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dRender.h">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\src\ofxBox2dUtils.h">
+      <Filter>addons\ofxBox2d-master\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Box2D.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\b2BroadPhase.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\b2Collision.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\b2Distance.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\b2DynamicTree.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\b2TimeOfImpact.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\Shapes\b2ChainShape.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\Shapes\b2CircleShape.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\Shapes\b2EdgeShape.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\Shapes\b2PolygonShape.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Collision\Shapes\b2Shape.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Collision\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Common\b2BlockAllocator.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Common\b2Draw.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Common\b2GrowableStack.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Common\b2Math.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Common\b2Settings.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Common\b2StackAllocator.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Common\b2Timer.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\b2Body.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\b2ContactManager.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\b2Fixture.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\b2Island.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\b2TimeStep.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\b2World.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\b2WorldCallbacks.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2ChainAndCircleContact.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2ChainAndPolygonContact.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2CircleContact.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2Contact.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2ContactSolver.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2EdgeAndCircleContact.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2EdgeAndPolygonContact.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2PolygonAndCircleContact.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts\b2PolygonContact.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Contacts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2DistanceJoint.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2FrictionJoint.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2GearJoint.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2Joint.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2MotorJoint.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2MouseJoint.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2PrismaticJoint.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2PulleyJoint.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2RevoluteJoint.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2RopeJoint.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2WeldJoint.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints\b2WheelJoint.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Dynamics\Joints</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\Box2D\Rope\b2Rope.h">
+      <Filter>addons\ofxBox2d-master\libs\Box2D\Rope</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\triangle\triangle.h">
+      <Filter>addons\ofxBox2d-master\libs\triangle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\triangle\assert.hpp">
+      <Filter>addons\ofxBox2d-master\libs\triangle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\triangle\del_interface.hpp">
+      <Filter>addons\ofxBox2d-master\libs\triangle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\triangle\dpoint.hpp">
+      <Filter>addons\ofxBox2d-master\libs\triangle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Downloads\of_v0.9.3_vs_release\addons\ofxBox2d-master\libs\triangle\triangle_impl.hpp">
+      <Filter>addons\ofxBox2d-master\libs\triangle</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+</Project>
