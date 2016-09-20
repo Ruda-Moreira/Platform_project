@@ -21,7 +21,7 @@ void heroInit(Hero& hero)
     hero.walkRight.frame = 0;
     hero.walkRight.count = 3;
     hero.walkRight.repeat = true;
-    hero.walkRight.frameTime = 0.5;
+    hero.walkRight.frameTime = 0.3;
     hero.walkRight.time = 0;
     
     hero.walkLeft.images = new ofImage[3];
@@ -31,7 +31,7 @@ void heroInit(Hero& hero)
     hero.walkLeft.frame = 0;
     hero.walkLeft.count = 3;
     hero.walkLeft.repeat = true;
-    hero.walkLeft.frameTime = 0.5;
+    hero.walkLeft.frameTime = 0.3;
     hero.walkLeft.time = 0;
     
     hero.direction = RIGHT;

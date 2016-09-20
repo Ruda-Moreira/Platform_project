@@ -4,16 +4,15 @@
 
 float before;
 
-Hero hero[2];
+Hero hero;
 Shoot shoot;
 
 //--------------------------------------------------------------
 void ofApp::setup() {
 	before = ofGetElapsedTimef();
-	for (int i = 0; i < 2; i++) {
-		heroInit(hero[i]);
-	}
-	shootInit(shoot);
+	
+		heroInit(hero);
+		shootInit(shoot, hero);	
 }
 
 //--------------------------------------------------------------
@@ -21,42 +20,40 @@ void ofApp::update() {
 	float secs = ofGetElapsedTimef() - before;
 	before = ofGetElapsedTimef();
 
-	for (int i = 0; i < 2; i++) {
-		heroUpdate(hero[i], secs);
-	}
+		heroUpdate(hero, secs);
+	
 	if (shoot.isShooting) {
-		shootUpdate(shoot, hero[0], secs);
+		shootUpdate(shoot, secs);
 	}
 }
 
 //--------------------------------------------------------------
 void ofApp::draw() {
-	for (int i = 0; i < 2; i++) {
-		heroDraw(hero[i]);
+		heroDraw(hero);
 		if (shoot.isShooting) {
-			shootDraw(shoot, hero[i]);
+			shootDraw(shoot, hero);
 		}
-	}
+	
 
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
 	if (key == OF_KEY_RIGHT) {
-		heroTurnRight(hero[0]);
-		heroWalk(hero[0]);
+		heroTurnRight(hero);
+		heroWalk(hero);
 	}
 	if (key == OF_KEY_LEFT) {
-		heroTurnLeft(hero[0]);
-		heroWalk(hero[0]);
+		heroTurnLeft(hero);
+		heroWalk(hero);
 	}
 	if (key == 'D') {
-		heroTurnRight(hero[1]);
-		heroWalk(hero[1]);
+		heroTurnRight(hero);
+		heroWalk(hero);
 	}
 	if (key == 'A') {
-		heroTurnLeft(hero[1]);
-		heroWalk(hero[1]);
+		heroTurnLeft(hero);
+		heroWalk(hero);
 	}
 	if (key == 'x') {
 		shoot.isShooting = true;
@@ -67,10 +64,10 @@ void ofApp::keyPressed(int key) {
 void ofApp::keyReleased(int key) {
 	if (key == OF_KEY_LEFT || key == OF_KEY_RIGHT)
 	{
-		heroStop(hero[0]);
+		heroStop(hero);
 	}
 	if (key == 'A' || key == 'D') {
-		heroStop(hero[1]);
+		heroStop(hero);
 	}
 	if (key == 'x') {
 		shoot.isShooting = false;
