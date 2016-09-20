@@ -9,81 +9,87 @@
 #include <stdio.h>
 #include "hero.h"
 
-void heroInit(Hero& hero)
+void Hero::init()
 {
-    hero.life = 10;
-    hero.position = ofVec2f(100, 100);
+    life = 10;
+    position = ofVec2f(100, 100);
     
-    hero.walkRight.images = new ofImage[3];
-    hero.walkRight.images[0].load("img/P1.png");
-    hero.walkRight.images[1].load("img/P2.png");
-    hero.walkRight.images[2].load("img/P3.png");
-    hero.walkRight.frame = 0;
-    hero.walkRight.count = 3;
-    hero.walkRight.repeat = true;
-    hero.walkRight.frameTime = 0.3;
-    hero.walkRight.time = 0;
+    walkRight.images = new ofImage[3];
+    walkRight.images[0].load("img/P1.png");
+    walkRight.images[1].load("img/P2.png");
+    walkRight.images[2].load("img/P3.png");
+    walkRight.frame = 0;
+    walkRight.count = 3;
+    walkRight.repeat = true;
+    walkRight.frameTime = 0.3;
+    walkRight.time = 0;
     
-    hero.walkLeft.images = new ofImage[3];
-    hero.walkLeft.images[0].load("img/P4.png");
-    hero.walkLeft.images[1].load("img/P5.png");
-    hero.walkLeft.images[2].load("img/P6.png");
-    hero.walkLeft.frame = 0;
-    hero.walkLeft.count = 3;
-    hero.walkLeft.repeat = true;
-    hero.walkLeft.frameTime = 0.3;
-    hero.walkLeft.time = 0;
+    walkLeft.images = new ofImage[3];
+    walkLeft.images[0].load("img/P4.png");
+    walkLeft.images[1].load("img/P5.png");
+    walkLeft.images[2].load("img/P6.png");
+    walkLeft.frame = 0;
+    walkLeft.count = 3;
+    walkLeft.repeat = true;
+    walkLeft.frameTime = 0.3;
+    walkLeft.time = 0;
     
-    hero.direction = RIGHT;
+    direction = RIGHT;
 }
 
-void heroTurnRight(Hero& hero)
+void Hero::turnRight()
 {
-    hero.direction = RIGHT;
+    direction = RIGHT;
 }
-void heroTurnLeft(Hero& hero)
+void Hero::turnLeft()
 {
-    hero.direction = LEFT;
-}
-
-void heroWalk(Hero& hero)
-{
-    hero.isWalking = true;
+    direction = LEFT;
 }
 
-void heroStop(Hero& hero)
+void Hero::walk()
 {
-    hero.isWalking = false;
+    isWalking = true;
 }
 
-void heroUpdate(Hero& hero, float secs)
+void Hero::stop()
 {
-    if (!hero.isWalking)
+    isWalking = false;
+}
+
+void Hero::update(float secs)
+{
+    if (!isWalking)
     {
-        hero.walkRight.frame = 0;
-        hero.walkLeft.frame = 0;
+        walkRight.frame = 0;
+        walkLeft.frame = 0;
         return;
     }
     
     ofVec2f speed(200,0);
         
-    if (hero.direction == RIGHT) {
-        hero.position += speed * secs;
-        animationUpdate(hero.walkRight, secs);
+    if (direction == RIGHT) {
+        position += speed * secs;
+        animationUpdate(walkRight, secs);
     } else {
-        hero.position -= speed * secs;
-        animationUpdate(hero.walkLeft, secs);
+        position -= speed * secs;
+        animationUpdate(walkLeft, secs);
     }
 }
 
-void heroDraw(Hero& hero)
+void Hero::draw()
 {
     //Animation& walkAnimation = direction == RIGHT ? hero.walkRight : hero.walkLeft;
     //animationDraw(, hero.position);
     
-    if (hero.direction == RIGHT) {
-        animationDraw(hero.walkRight, hero.position);
+    if (direction == RIGHT) {
+        animationDraw(walkRight, position);
     } else {
-        animationDraw(hero.walkLeft, hero.position);
+        animationDraw(walkLeft, position);
     }
 }
+
+ofVec2f Hero::getHandPosition()
+{
+    return position + ofVec2f(250, 250);
+}
+

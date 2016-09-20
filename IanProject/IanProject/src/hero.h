@@ -15,25 +15,27 @@
 #define RIGHT true
 #define LEFT false
 
-struct Hero {
+class Hero {
+private:
     ofVec2f position;
     int life;
-    bool direction;
-    
     Animation walkLeft;
     Animation walkRight;
     
     bool isWalking;
+public:
+    bool direction;
+    
+    void init();
+    void turnRight();
+    void turnLeft();
+    void walk();
+    void stop();
+    void update(float secs);
+    void draw();
+    
+    ofVec2f getHandPosition();    
 };
 
-void heroInit(Hero& hero);
-
-void heroTurnRight(Hero& hero);
-void heroTurnLeft(Hero& hero);
-void heroWalk(Hero& hero);
-void heroStop(Hero& hero);
-
-void heroUpdate(Hero& hero, float secs);
-void heroDraw(Hero& hero);
 
 #endif /* hero_h */

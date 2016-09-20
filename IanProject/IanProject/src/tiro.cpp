@@ -2,27 +2,27 @@
 #include "tiro.h"
 
 
-void shootInit(Shoot &shoot, Hero &hero) {
-	shoot.snowball.load("img/snowball.png");
-	shoot.position = ofVec2f (200,200);
+void Shoot::init(Hero &hero) {    
+	snowball.load("img/snowball.png");
+	position = hero.getHandPosition();
+    
 	if (hero.direction == RIGHT) {
-		shoot.direction = RIGHT;
+		direction = RIGHT;
 	}
 	else {
-		shoot.direction = LEFT;
+		direction = LEFT;
 	}
 }
-void shootUpdate(Shoot &shoot, float secs) {
+
+void Shoot::update(float secs) {
 		ofVec2f speed(300, 0);
-		if (shoot.isShooting) {
-			if (shoot.direction == RIGHT) {
-				shoot.position += speed * secs;
-			}
-			else {
-				shoot.position -= speed * secs;
-			}
-		}
+        if (direction == RIGHT) {
+            position += speed * secs;
+        }
+        else {
+            position -= speed * secs;
+        }
 }
-void shootDraw(Shoot &shoot, Hero &hero) {
-	shoot.snowball.draw(hero.position);
+void Shoot::draw() {
+	snowball.draw(position);
 }
