@@ -3,17 +3,20 @@
 
 #include "ofApp.h"
 
-struct Animation {
-    ofImage* images;
-    int count;
-    bool repeat;
-    float frameTime;
-    
-    float time;
-    int frame;
+Animation animation;
+
+class Animation {
+public:
+	ofImage* images;
+	int frame;
+	int count;
+	bool repeat;
+	float frameTime;
+	float time;
+	void update(float secs);
+	void draw(ofVec2f position);
 };
 
-void animationUpdate(Animation& animation, float secs);
-void animationDraw(Animation& animation, ofVec2f position);
+
 
 #endif

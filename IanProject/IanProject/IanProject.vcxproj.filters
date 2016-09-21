@@ -24,6 +24,9 @@
     <ClCompile Include="src\tiro.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\TileMap.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\animation.h">
@@ -36,6 +39,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\tiro.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TileMap.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,11 +1,3 @@
-//
-//  hero.h
-//  platform
-//
-//  Created by ViniGodoy on 09/09/16.
-//
-//
-
 #ifndef hero_h
 #define hero_h
 

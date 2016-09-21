@@ -1,11 +1,3 @@
-//
-//  hero.cpp
-//  platform
-//
-//  Created by ViniGodoy on 09/09/16.
-//
-//
-
 #include <stdio.h>
 #include "hero.h"
 
@@ -69,10 +61,10 @@ void Hero::update(float secs)
         
     if (direction == RIGHT) {
         position += speed * secs;
-        animationUpdate(walkRight, secs);
+        animation.update(walkRight, secs);
     } else {
         position -= speed * secs;
-        animationUpdate(walkLeft, secs);
+        animation.update(walkLeft, secs);
     }
 }
 
@@ -82,14 +74,14 @@ void Hero::draw()
     //animationDraw(, hero.position);
     
     if (direction == RIGHT) {
-        animationDraw(walkRight, position);
+        animation.draw(walkRight, position);
     } else {
-        animationDraw(walkLeft, position);
+        animation.draw(walkLeft, position);
     }
 }
 
 ofVec2f Hero::getHandPosition()
 {
-    return position + ofVec2f(250, 250);
+    return position + ofVec2f(45, 45);
 }
 

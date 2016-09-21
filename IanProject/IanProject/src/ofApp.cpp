@@ -10,7 +10,6 @@ Shoot* shoot;
 //--------------------------------------------------------------
 void ofApp::setup() {
 	before = ofGetElapsedTimef();
-	
     hero.init();
     shoot = nullptr;
 }
@@ -21,10 +20,10 @@ void ofApp::update() {
 	before = ofGetElapsedTimef();
 
     hero.update(secs);
-	
-	if (shoot) {
-		shoot->update(secs);
-	}
+
+		if (shoot) {
+			shoot->update(secs);
+		}	
 }
 
 //--------------------------------------------------------------
