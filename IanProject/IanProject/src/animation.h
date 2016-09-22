@@ -3,7 +3,6 @@
 
 #include "ofApp.h"
 
-Animation animation;
 
 class Animation {
 public:
@@ -16,7 +15,5 @@ public:
 	void update(float secs);
 	void draw(ofVec2f position);
 };
-
-
 
 #endif

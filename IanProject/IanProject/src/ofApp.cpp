@@ -1,16 +1,20 @@
 #include "ofApp.h"
 #include "hero.h"
 #include "tiro.h"
+#include "TileMap.h"
 
 float before;
 
 Hero hero;
 Shoot* shoot;
+TileMap tilemap;
 
 //--------------------------------------------------------------
 void ofApp::setup() {
 	before = ofGetElapsedTimef();
     hero.init();
+	tilemap.init();
+
     shoot = nullptr;
 }
 
@@ -28,6 +32,7 @@ void ofApp::update() {
 
 //--------------------------------------------------------------
 void ofApp::draw() {
+	tilemap.draw();
     hero.draw();
     if (shoot) {
         shoot->draw();
