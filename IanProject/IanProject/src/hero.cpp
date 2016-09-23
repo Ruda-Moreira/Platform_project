@@ -2,8 +2,6 @@
 #include "hero.h"
 //#include "animation.h"
 
-Animation animation;
-
 void Hero::init()
 {
     life = 10;
@@ -64,10 +62,10 @@ void Hero::update(float secs)
         
     if (direction == RIGHT) {
         position += speed * secs;
-        animation.update(secs);
+        walkRight.update(secs);
     } else {
         position -= speed * secs;
-        animation.update(secs);
+        walkLeft.update(secs);
     }
 }
 
@@ -77,9 +75,9 @@ void Hero::draw()
     //animationDraw(, hero.position);
     
     if (direction == RIGHT) {
-        animation.draw(position);
+		walkRight.draw(position);
     } else {
-        animation.draw(position);
+		walkLeft.draw(position);
     }
 }
 

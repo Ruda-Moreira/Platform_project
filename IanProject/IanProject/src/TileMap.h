@@ -2,20 +2,25 @@
 #define TileMap_h
 
 #include "ofApp.h"
+#define TAM 10
 
 class TileMap {
 public:
 	ofImage* tiles;
 	ofVec2f position;
-	char map[3][3] = { '@', '#', '*',
-					   '!', ' ', '$',
-					   '@', ' ', '!' };
-
+	char map[TAM][TAM] = {
+		"        ",
+		"    ####",
+		"        ",
+		"#####   ",
+		"        ",
+		"     ###",
+		"        ",
+		" $    ! ",
+		"@#@ @@@@",
+		"########" };
 
 	void draw();
 	void init();
-
 };
-
-
 #endif
