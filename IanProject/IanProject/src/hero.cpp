@@ -2,10 +2,10 @@
 #include "hero.h"
 //#include "animation.h"
 
-void Hero::init()
+void Hero::init(ofVec2f pos)
 {
     life = 10;
-    position = ofVec2f(100, 100);
+    position = pos;
     
     walkRight.images = new ofImage[3];
     walkRight.images[0].load("img/P1.png");

@@ -18,7 +18,7 @@ private:
 public:
     bool direction;
     
-    void init();
+    void init(ofVec2f pos);
     void turnRight();
     void turnLeft();
     void walk();

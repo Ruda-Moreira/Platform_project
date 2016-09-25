@@ -12,7 +12,7 @@ TileMap tilemap;
 //--------------------------------------------------------------
 void ofApp::setup() {
 	before = ofGetElapsedTimef();
-    hero.init();
+    hero.init(tilemap.getSpawnPoint());
 	tilemap.init();
 
     shoot = nullptr;
