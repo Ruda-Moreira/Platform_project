@@ -33,12 +33,12 @@ char TileMap::getTileChar(ofVec2f position) {
 ofVec2f TileMap::getSpawnPoint() {
 	for (int i = 0; i < HEIGHT; i++) {
 		for (int j = 0; j < WIDTH; j++) {
-			ofImage &tile = tiles[map[i][j]];
-			if (map[i][j] == 'p');
-			ofVec2f result;
-			result.x = result.x + j* tile.getWidth();
-			result.y = result.y + i * tile.getHeight();
-			return result;
+			if (map[i][j] == 'p') {
+				ofVec2f result;
+				result.x = result.x + j* TILE;
+				result.y = result.y + i * TILE;
+				return result;
+			}
 		}
 	}
 }

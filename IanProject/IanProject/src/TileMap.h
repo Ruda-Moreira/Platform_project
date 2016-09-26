@@ -1,6 +1,5 @@
 #ifndef TileMap_h
 #define TileMap_h
-#include "ofWindowSettings.h"
 #include "ofApp.h"
 #define WIDTH 17
 #define HEIGHT 13

@@ -9,8 +9,9 @@ class Shoot {
         ofImage snowball;
         ofVec2f position;
         bool direction;
-
+		
     public:
+		int count = 0;
         void init(Hero &hero);
         void update(float secs);
         void draw();

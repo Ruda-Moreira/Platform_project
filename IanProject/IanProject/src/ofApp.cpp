@@ -12,10 +12,9 @@ TileMap tilemap;
 //--------------------------------------------------------------
 void ofApp::setup() {
 	before = ofGetElapsedTimef();
-    hero.init(tilemap.getSpawnPoint());
+	hero.init(tilemap.getSpawnPoint());
 	tilemap.init();
-
-    shoot = nullptr;
+	shoot = new Shoot[200];
 }
 
 //--------------------------------------------------------------
@@ -23,20 +22,21 @@ void ofApp::update() {
 	float secs = ofGetElapsedTimef() - before;
 	before = ofGetElapsedTimef();
 
-    hero.update(secs);
+	hero.update(secs);
 
-		if (shoot) {
-			shoot->update(secs);
-		}	
+	if (shoot) {
+		shoot[shoot->count].update(secs);
+	}
 }
 
 //--------------------------------------------------------------
 void ofApp::draw() {
 	tilemap.draw();
-    hero.draw();
-    if (shoot) {
-        shoot->draw();
-    }
+	hero.draw();
+
+	if (shoot) {
+		shoot[shoot->count].draw();
+	}
 }
 
 //--------------------------------------------------------------
@@ -58,8 +58,8 @@ void ofApp::keyPressed(int key) {
 		hero.walk();
 	}
 	if (key == 'x') {
-        shoot = new Shoot();
-        shoot->init(hero);
+		shoot = new Shoot();
+		shoot[shoot->count].init(hero);
 	}
 }
 

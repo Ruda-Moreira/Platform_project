@@ -5,6 +5,7 @@
 void Shoot::init(Hero &hero) {    
 	snowball.load("img/snowball.png");
 	position = hero.getHandPosition();
+	count += 1;
     
 	if (hero.direction == RIGHT) {
 		direction = RIGHT;
