@@ -7,15 +7,13 @@
 float before;
 
 Hero hero;
-Shoot* shoot;
 TileMap tilemap;
+vector<Shoot*> shoot;
 
 //coloquei aqui pq pra não colocar no draw, mas tá feio isso ai...
 
-
 //--------------------------------------------------------------
 void ofApp::setup() {
-	
 	before = ofGetElapsedTimef();
 	hero.init(tilemap.getSpawnPoint());
 	tilemap.init();
@@ -27,17 +25,19 @@ void ofApp::update() {
 	before = ofGetElapsedTimef();
 
 	hero.update(secs);
-	shoot->update(secs);
-	
+	for (int i = 0; i < shoot.size(); i++) {
+		if(shoot[i] != nullptr)
+		shoot[i]->update(secs);
+	}
 }
 
 //--------------------------------------------------------------
 void ofApp::draw() {
 	tilemap.draw();
 	hero.draw();
-
-	shoot->draw();
-	
+	for (int i = 0; i < shoot.size(); i++) {
+		shoot[i]->draw();
+	}	
 }
 
 //--------------------------------------------------------------
@@ -59,16 +59,16 @@ void ofApp::keyPressed(int key) {
 		hero.walk();
 	}
 	if (key == 'x') {
-		vector<Shoot*> shoots;
-		Shoot* shoots = new Shoot();
-		shoots.push_back(shoot);
+		shoot.push_back(new Shoot());
+		for (int i = 0; i < shoot.size(); i++) {
+			shoot[i]->init(hero);
+		}
 	}
 }
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key) {
-	if (key == OF_KEY_LEFT || key == OF_KEY_RIGHT)
-	{
+	if (key == OF_KEY_LEFT || key == OF_KEY_RIGHT) {
 		hero.stop();
 	}
 	if (key == 'A' || key == 'D') {

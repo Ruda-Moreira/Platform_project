@@ -11,7 +11,6 @@ class Shoot {
         bool direction;
 		
     public:
-		int count = 0;
         void init(Hero &hero);
         void update(float secs);
         void draw();
