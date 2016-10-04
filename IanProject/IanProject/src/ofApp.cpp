@@ -2,6 +2,7 @@
 #include "hero.h"
 #include "tiro.h"
 #include "TileMap.h"
+#include <vector>
 
 float before;
 
@@ -9,12 +10,15 @@ Hero hero;
 Shoot* shoot;
 TileMap tilemap;
 
+//coloquei aqui pq pra não colocar no draw, mas tá feio isso ai...
+
+
 //--------------------------------------------------------------
 void ofApp::setup() {
+	
 	before = ofGetElapsedTimef();
 	hero.init(tilemap.getSpawnPoint());
 	tilemap.init();
-	shoot = new Shoot[200];
 }
 
 //--------------------------------------------------------------
@@ -23,10 +27,8 @@ void ofApp::update() {
 	before = ofGetElapsedTimef();
 
 	hero.update(secs);
-
-	if (shoot) {
-		shoot[shoot->count].update(secs);
-	}
+	shoot->update(secs);
+	
 }
 
 //--------------------------------------------------------------
@@ -34,9 +36,8 @@ void ofApp::draw() {
 	tilemap.draw();
 	hero.draw();
 
-	if (shoot) {
-		shoot[shoot->count].draw();
-	}
+	shoot->draw();
+	
 }
 
 //--------------------------------------------------------------
@@ -58,8 +59,9 @@ void ofApp::keyPressed(int key) {
 		hero.walk();
 	}
 	if (key == 'x') {
-		shoot = new Shoot();
-		shoot[shoot->count].init(hero);
+		vector<Shoot*> shoots;
+		Shoot* shoots = new Shoot();
+		shoots.push_back(shoot);
 	}
 }
 
