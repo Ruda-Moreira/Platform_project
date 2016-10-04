@@ -26,7 +26,7 @@ void ofApp::update() {
 
 	hero.update(secs);
 	for (int i = 0; i < shoot.size(); i++) {
-		if(shoot[i] != nullptr)
+		if(shoot[i])
 		shoot[i]->update(secs);
 	}
 }
@@ -36,6 +36,7 @@ void ofApp::draw() {
 	tilemap.draw();
 	hero.draw();
 	for (int i = 0; i < shoot.size(); i++) {
+        if(shoot[i])
 		shoot[i]->draw();
 	}	
 }
@@ -59,10 +60,9 @@ void ofApp::keyPressed(int key) {
 		hero.walk();
 	}
 	if (key == 'x') {
-		shoot.push_back(new Shoot());
-		for (int i = 0; i < shoot.size(); i++) {
-			shoot[i]->init(hero);
-		}
+        Shoot* s = new Shoot();
+        s->init(hero);
+        shoot.push_back(s);
 	}
 }
 
