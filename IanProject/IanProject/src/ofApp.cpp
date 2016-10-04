@@ -15,7 +15,7 @@ vector<Shoot*> shoot;
 //--------------------------------------------------------------
 void ofApp::setup() {
 	before = ofGetElapsedTimef();
-	hero.init(tilemap.getSpawnPoint());
+	hero.init(tilemap.getSpawnPoint(), &tilemap);
 	tilemap.init();
 }
 
@@ -64,6 +64,9 @@ void ofApp::keyPressed(int key) {
         s->init(hero);
         shoot.push_back(s);
 	}
+    if (key == 'z'){
+        hero.jump();
+    }
 }
 
 //--------------------------------------------------------------

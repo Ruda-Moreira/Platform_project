@@ -3,6 +3,7 @@
 
 #include "ofApp.h"
 #include "animation.h"
+#include "TileMap.h"
 
 #define RIGHT true
 #define LEFT false
@@ -15,12 +16,17 @@ private:
     Animation walkRight;
     
     bool isWalking;
+    bool isJumping;
+    float jumpTime;
 public:
     bool direction;
     
-    void init(ofVec2f pos);
+    TileMap* tileMap;
+
+    void init(ofVec2f pos, TileMap* tilemap);
     void turnRight();
     void turnLeft();
+    void jump();
     void walk();
     void stop();
     void update(float secs);
