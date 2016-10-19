@@ -24,10 +24,26 @@ void ofApp::setup() {
 void ofApp::update() {
 	//camera
 	ofVec2f SCREEN_CENTER(ofGetWidth() / 2, ofGetHeight() / 2);
-	posCamera = hero.getPlayerPosition() - SCREEN_CENTER;
+	posCamera = hero.getPosition() - SCREEN_CENTER;
 
-	float secs = ofGetElapsedTimef() - before;
-	before = ofGetElapsedTimef();
+	float maxX = tilemap.getMapWidth() - ofGetWidth();
+	float maxY = tilemap.getMapHeight() - ofGetHeight();
+	//odiei esse if aqui, quero tirar essa nhaca o quanto antes u_u
+	if (posCamera.x <= 0) {
+		posCamera.x = 0;
+	}
+	else if (posCamera.x >= maxX) {
+		posCamera.x = maxX;
+	}
+	if (posCamera.y <= 0) {
+		posCamera.y = 0;
+	}
+	else if (posCamera.y >= maxY) {
+		posCamera.y = maxY;
+	}
+
+
+	float secs = ofGetLastFrameTime();
 
 	hero.update(secs);
 	for (int i = 0; i < shoot.size(); i++) {
@@ -38,12 +54,15 @@ void ofApp::update() {
 
 //--------------------------------------------------------------
 void ofApp::draw() {
-	tilemap.draw();
-	hero.draw();
+
+	tilemap.draw(posCamera, hero.getPosition());
+	hero.draw(posCamera);
 	for (int i = 0; i < shoot.size(); i++) {
         if(shoot[i])
-		shoot[i]->draw();
+		shoot[i]->draw(posCamera);
 	}	
+
+	
 }
 
 //--------------------------------------------------------------
@@ -56,30 +75,25 @@ void ofApp::keyPressed(int key) {
 		hero.turnLeft();
 		hero.walk();
 	}
-	if (key == 'D') {
-		hero.turnRight();
-		hero.walk();
+	if (key == 'e') {
+		Shoot* s = new Shoot();
+		s->init(hero);
+		shoot.push_back(s);
 	}
-	if (key == 'A') {
-		hero.turnLeft();
-		hero.walk();
+	if (key == 'w') {
+		hero.jump();
 	}
-	if (key == 'x') {
-        Shoot* s = new Shoot();
-        s->init(hero);
-        shoot.push_back(s);
+	if (key == 'r') {
+		//acabei de perceber que quando eu faço a conferência com o getTileChar, ele me retorna
+		//a 'p', que é o tile do player. como fazer pra detectar o tile '/' que está na mesma posição ?_?
+		if(tilemap.getTileChar(hero.getPosition()) == '/')
+		tilemap.textBoxActive();
 	}
-    if (key == 'z'){
-        hero.jump();
-    }
 }
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key) {
 	if (key == OF_KEY_LEFT || key == OF_KEY_RIGHT) {
-		hero.stop();
-	}
-	if (key == 'A' || key == 'D') {
 		hero.stop();
 	}
 }

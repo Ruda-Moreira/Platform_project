@@ -30,10 +30,11 @@ public:
     void walk();
     void stop();
     void update(float secs);
-    void draw();
+    void draw(ofVec2f camera);
+	bool getJumpStatus();
     
     ofVec2f getHandPosition();    
-	ofVec2f getPlayerPosition();
+	ofVec2f getPosition();
 };
 
 

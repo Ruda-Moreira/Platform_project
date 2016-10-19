@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "tiro.h"
 
+//primeira classe que eu fiz sozinha hehe :3
 
 void Shoot::init(Hero &hero) {    
 	snowball.load("img/snowball.png");
@@ -23,6 +24,6 @@ void Shoot::update(float secs) {
             position -= speed * secs;
         }
 }
-void Shoot::draw() {
-	snowball.draw(position);
+void Shoot::draw(ofVec2f camera) {
+	snowball.draw(position - camera);
 }

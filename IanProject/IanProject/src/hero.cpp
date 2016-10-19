@@ -101,6 +101,13 @@ void Hero::update(float secs)
         position -= speed * secs;
         walkLeft.update(secs);
     }
+	//acertei pro player não cair mais pra trás rs
+	if (position.x <= 0) {
+		position.x = 0;
+	}
+	else if (position.x >= tileMap->getMapWidth()) {
+		position.x = tileMap->getMapWidth();
+	}
     
     ofVec2f posTile = position + ofVec2f(0,TILE);
     char tile = tileMap->getTileChar(posTile);
@@ -109,12 +116,12 @@ void Hero::update(float secs)
     }
 }
 
-void Hero::draw()
+void Hero::draw(ofVec2f camera)
 {
     //Animation& walkAnimation = direction == RIGHT ? hero.walkRight : hero.walkLeft;
     //animationDraw(, hero.position);
     
-    ofVec2f drawPlayer = position - ofVec2f (0,26);
+    ofVec2f drawPlayer = position - ofVec2f (0,26) - camera;
     
     if (direction == RIGHT) {
 		walkRight.draw(drawPlayer);
@@ -122,8 +129,11 @@ void Hero::draw()
 		walkLeft.draw(drawPlayer);
     }
 }
+bool Hero::getJumpStatus() {
+	return isJumping;
+}
 
-ofVec2f Hero::getPlayerPosition() {
+ofVec2f Hero::getPosition() {
 	return position;
 }
 
