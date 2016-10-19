@@ -15,7 +15,6 @@ ofVec2f posCamera;
 //--------------------------------------------------------------
 void ofApp::setup() {
 	before = ofGetElapsedTimef();
-	//ta dando erro no hero mas eu não mechi nessa função ._.
 	hero.init(tilemap.getSpawnPoint(), &tilemap);
 	tilemap.init();
 }
@@ -61,10 +60,7 @@ void ofApp::draw() {
         if(shoot[i])
 		shoot[i]->draw(posCamera);
 	}	
-
-	
 }
-
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
 	if (key == OF_KEY_RIGHT) {
@@ -90,7 +86,6 @@ void ofApp::keyPressed(int key) {
 		tilemap.textBoxActive();
 	}
 }
-
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key) {
 	if (key == OF_KEY_LEFT || key == OF_KEY_RIGHT) {
