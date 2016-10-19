@@ -123,6 +123,10 @@ void Hero::draw()
     }
 }
 
+ofVec2f Hero::getPlayerPosition() {
+	return position;
+}
+
 ofVec2f Hero::getHandPosition()
 {
     return position + ofVec2f(45, 45);

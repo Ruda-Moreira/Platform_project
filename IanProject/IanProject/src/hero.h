@@ -33,6 +33,7 @@ public:
     void draw();
     
     ofVec2f getHandPosition();    
+	ofVec2f getPlayerPosition();
 };
 
 

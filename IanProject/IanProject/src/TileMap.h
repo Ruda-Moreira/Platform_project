@@ -1,29 +1,33 @@
 #ifndef TileMap_h
 #define TileMap_h
 #include "ofApp.h"
-#define WIDTH 17
-#define HEIGHT 13
+#define WIDTH 25
+#define HEIGHT 15
 #define TILE 64
 
 class TileMap {
 public:
 	ofImage* tiles;
+	//declarei aqui a imagem do bg
+	ofImage background;
 	ofVec2f position;
 	ofVec2f spawnPoint;
 	char map[HEIGHT][WIDTH] = {
-		"                ",
-		"                ",
-		"   p *$         ",
-		"########        ",
-		"                ",
-		"          *     ",
-		"         #######",
-		"                ",
-		"  $*     $! * ! ",
-		"################",
-		"@@@@@@@@@@@@@@@@", 
-		"                ",
-		"                " };
+		"                        ",
+		"                        ",
+		"                        ",
+		"                        ",
+		"             ###########",
+		"                        ",
+		"        ##              ",
+		"  *                     ",
+		"#######                 ",
+		"                        ",
+		"  $*     $! * !  *   !  ",
+		"########################",
+		"@@@@@@@@@@@@@@@@@@@@@@@@", 
+		"                        ",
+		"                        " };
 
 	void draw();
 	void init();

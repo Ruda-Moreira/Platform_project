@@ -4,6 +4,9 @@
 
 
 void TileMap::init() {
+	//declaração do background
+	background.load("img/bg.jpg");
+
 	position = ofVec2f(0, 0);
 	tiles = new ofImage[255];
 	tiles['!'].load("img/tile1.png");
@@ -14,6 +17,9 @@ void TileMap::init() {
 }
 
 void TileMap::draw() {
+
+	background.draw(0, 0);
+
 	for (int i = 0; i < HEIGHT; i++) {
 		for (int j = 0; j < WIDTH; j++) {
 			ofImage &tile = tiles[map[i][j]];

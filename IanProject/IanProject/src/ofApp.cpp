@@ -9,18 +9,23 @@ float before;
 Hero hero;
 TileMap tilemap;
 vector<Shoot*> shoot;
+ofVec2f posCamera;
 
-//coloquei aqui pq pra não colocar no draw, mas tá feio isso ai...
 
 //--------------------------------------------------------------
 void ofApp::setup() {
 	before = ofGetElapsedTimef();
+	//ta dando erro no hero mas eu não mechi nessa função ._.
 	hero.init(tilemap.getSpawnPoint(), &tilemap);
 	tilemap.init();
 }
 
 //--------------------------------------------------------------
 void ofApp::update() {
+	//camera
+	ofVec2f SCREEN_CENTER(ofGetWidth() / 2, ofGetHeight() / 2);
+	posCamera = hero.getPlayerPosition() - SCREEN_CENTER;
+
 	float secs = ofGetElapsedTimef() - before;
 	before = ofGetElapsedTimef();
 
