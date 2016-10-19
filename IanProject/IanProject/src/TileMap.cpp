@@ -21,7 +21,7 @@ void TileMap::init() {
 
 void TileMap::draw(ofVec2f camera, ofVec2f heroPos) {
 
-	background.draw(position);
+	background.draw(position - camera);
 
 	for (int i = 0; i < HEIGHT; i++) {
 		for (int j = 0; j < WIDTH; j++) {
@@ -35,7 +35,7 @@ void TileMap::draw(ofVec2f camera, ofVec2f heroPos) {
 
 	if (textBoxCheck) {
 		ofVec2f boxPos(heroPos.x, heroPos.y - getTextBoxHeight() * 2);
-		textBox.draw(boxPos);
+		textBox.draw(boxPos - camera);
 	}
 }
 
