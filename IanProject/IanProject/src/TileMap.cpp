@@ -34,7 +34,7 @@ void TileMap::draw(ofVec2f camera, ofVec2f heroPos) {
 	}
 
 	if (textBoxCheck) {
-		ofVec2f boxPos(heroPos.x, heroPos.y - getTextBoxHeight() * 2);
+		ofVec2f boxPos(ofGetWidth() /2, ofGetHeight()/2);
 		textBox.draw(boxPos - camera);
 	}
 }
@@ -56,7 +56,14 @@ float TileMap::getMapHeight() {
 }
 
 bool TileMap::textBoxActive() {
-	return textBoxCheck = true;
+	if (!textBoxCheck) {
+		textBoxCheck = true;
+	}
+	else {
+		textBoxCheck = false;
+	}
+
+	return textBoxCheck;
 }
 
 char TileMap::getTileChar(ofVec2f position) {

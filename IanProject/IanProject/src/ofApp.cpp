@@ -80,8 +80,7 @@ void ofApp::keyPressed(int key) {
 		hero.jump();
 	}
 	if (key == 'r') {
-		//acabei de perceber que quando eu faço a conferência com o getTileChar, ele me retorna
-		//a 'p', que é o tile do player. como fazer pra detectar o tile '/' que está na mesma posição ?_?
+		
 		if(tilemap.getTileChar(hero.getPosition()) == '/')
 		tilemap.textBoxActive();
 	}
