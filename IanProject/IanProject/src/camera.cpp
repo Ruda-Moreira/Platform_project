@@ -15,12 +15,12 @@ void Camera::update(ofVec2f player, ofVec2f background) {
 		cameraPos.x = maxX;
 	}
 
-	/*if(cameraPos.y <= 0) {
+	if(cameraPos.y <= 0) {
 		cameraPos.y = 0;
 	}
 	else if (cameraPos.y >= maxY) {
 		cameraPos.y = maxY;
-	}*/
+	}
 }
 
 ofVec2f Camera::getPosition() {

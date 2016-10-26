@@ -181,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\animation.cpp" />
+    <ClCompile Include="src\camera.cpp" />
     <ClCompile Include="src\hero.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
@@ -189,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\animation.h" />
+    <ClInclude Include="src\camera.h" />
     <ClInclude Include="src\hero.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="src\TileMap.h" />
