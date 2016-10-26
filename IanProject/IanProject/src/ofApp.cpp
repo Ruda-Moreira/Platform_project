@@ -2,49 +2,30 @@
 #include "hero.h"
 #include "tiro.h"
 #include "TileMap.h"
+#include "camera.h"
 #include <vector>
 
 float before;
 
 Hero hero;
+Camera camera;
 TileMap tilemap;
 vector<Shoot*> shoot;
-ofVec2f posCamera;
 
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-	before = ofGetElapsedTimef();
+	
 	hero.init(tilemap.getSpawnPoint(), &tilemap);
 	tilemap.init();
 }
 
 //--------------------------------------------------------------
 void ofApp::update() {
-	//camera
-	ofVec2f SCREEN_CENTER(ofGetWidth() / 2, ofGetHeight() / 2);
-	posCamera = hero.getPosition() - SCREEN_CENTER;
-
-	float maxX = tilemap.getMapWidth() - ofGetWidth();
-	float maxY = tilemap.getMapHeight() - ofGetHeight();
-	//odiei esse if aqui, quero tirar essa nhaca o quanto antes u_u
-	if (posCamera.x <= 0) {
-		posCamera.x = 0;
-	}
-	else if (posCamera.x >= maxX) {
-		posCamera.x = maxX;
-	}
-	if (posCamera.y <= 0) {
-		posCamera.y = 0;
-	}
-	else if (posCamera.y >= maxY) {
-		posCamera.y = maxY;
-	}
-
-
 	float secs = ofGetLastFrameTime();
-
+	camera.update(hero.getPosition(), ofVec2f(tilemap.getMapWidth() / 2, tilemap.getMapHeight() / 2));
 	hero.update(secs);
+	
 	for (int i = 0; i < shoot.size(); i++) {
 		if(shoot[i])
 		shoot[i]->update(secs);
@@ -54,11 +35,11 @@ void ofApp::update() {
 //--------------------------------------------------------------
 void ofApp::draw() {
 
-	tilemap.draw(posCamera, hero.getPosition());
-	hero.draw(posCamera);
+	tilemap.draw(camera.getPosition(), hero.getPosition());
+	hero.draw(camera.getPosition());
 	for (int i = 0; i < shoot.size(); i++) {
         if(shoot[i])
-		shoot[i]->draw(posCamera);
+		shoot[i]->draw(camera.getPosition());
 	}	
 }
 //--------------------------------------------------------------
@@ -80,8 +61,6 @@ void ofApp::keyPressed(int key) {
 		hero.jump();
 	}
 	if (key == 'r') {
-		//acabei de perceber que quando eu faço a conferência com o getTileChar, ele me retorna
-		//a 'p', que é o tile do player. como fazer pra detectar o tile '/' que está na mesma posição ?_?
 		if(tilemap.getTileChar(hero.getPosition()) == '/')
 		tilemap.textBoxActive();
 	}

@@ -56,7 +56,13 @@ float TileMap::getMapHeight() {
 }
 
 bool TileMap::textBoxActive() {
-	return textBoxCheck = true;
+	if (!textBoxCheck) {
+		textBoxCheck = true;
+	}
+	else {
+		textBoxCheck = false;
+	}
+	return textBoxCheck;
 }
 
 char TileMap::getTileChar(ofVec2f position) {
