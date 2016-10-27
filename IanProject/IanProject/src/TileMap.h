@@ -34,15 +34,15 @@ public:
 		"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
 		"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" };
 
-	void draw(ofVec2f camera, ofVec2f heroPos);
+	void draw(const ofVec2f& camera, const ofVec2f& heroPos);
 	void init();
-	float getTextBoxWidth();
-	float getTextBoxHeight();
-	float getMapWidth();
-	float getMapHeight();
+	float getTextBoxWidth() const;
+	float getTextBoxHeight() const;
+	float getMapWidth() const;
+	float getMapHeight() const;
 	bool textBoxActive();
 	ofVec2f getSpawnPoint();
-	char getTileChar(ofVec2f position);
+	char getTileChar(const ofVec2f& position);
 
 };
 #endif

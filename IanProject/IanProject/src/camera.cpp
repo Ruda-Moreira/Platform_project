@@ -1,7 +1,7 @@
 #include "camera.h"
 
 
-void Camera::update(ofVec2f player, ofVec2f background) {
+void Camera::update(const ofVec2f& player, const ofVec2f& background) {
 	SCREEN_CENTER.set(ofGetWidth() / 2, ofGetHeight() / 2);
 	cameraPos.set(player - SCREEN_CENTER);
 
@@ -23,6 +23,6 @@ void Camera::update(ofVec2f player, ofVec2f background) {
 	}
 }
 
-ofVec2f Camera::getPosition() {
+ofVec2f Camera::getPosition() const {
 	return cameraPos;
 }

@@ -24,6 +24,6 @@ void Shoot::update(float secs) {
             position -= speed * secs;
         }
 }
-void Shoot::draw(ofVec2f camera) {
+void Shoot::draw(const ofVec2f& camera) const {
 	snowball.draw(position - camera);
 }

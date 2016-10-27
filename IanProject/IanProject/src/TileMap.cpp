@@ -19,7 +19,7 @@ void TileMap::init() {
 	tiles['/'].load("img/tile_test.png");
 }
 
-void TileMap::draw(ofVec2f camera, ofVec2f heroPos) {
+void TileMap::draw(const ofVec2f& camera, const ofVec2f& heroPos) {
 
 	background.draw(position);
 
@@ -35,37 +35,32 @@ void TileMap::draw(ofVec2f camera, ofVec2f heroPos) {
 
 	if (textBoxCheck) {
 		ofVec2f boxPos(heroPos.x, heroPos.y - getTextBoxHeight() * 2);
-		textBox.draw(boxPos);
+		textBox.draw(boxPos - camera);
 	}
 }
 
-float TileMap::getTextBoxWidth() {
+float TileMap::getTextBoxWidth() const {
 	return textBox.getWidth();
 }
 
-float TileMap::getTextBoxHeight() {
+float TileMap::getTextBoxHeight() const {
 	return textBox.getHeight();
 }
 
-float TileMap::getMapWidth() {
+float TileMap::getMapWidth() const {
 	return background.getWidth();
 }
 
-float TileMap::getMapHeight() {
+float TileMap::getMapHeight() const {
 	return background.getHeight();
 }
 
 bool TileMap::textBoxActive() {
-	if (!textBoxCheck) {
-		textBoxCheck = true;
-	}
-	else {
-		textBoxCheck = false;
-	}
+	textBoxCheck = !textBoxCheck;
 	return textBoxCheck;
 }
 
-char TileMap::getTileChar(ofVec2f position) {
+char TileMap::getTileChar(const ofVec2f& position) {
 	int height = position.x / TILE;
 	int width = position.y / TILE;
 	return map[width][height];

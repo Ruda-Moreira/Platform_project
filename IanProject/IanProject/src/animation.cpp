@@ -14,7 +14,6 @@ void Animation::update(float secs) {
         }
     }   
 }
-void Animation::draw(ofVec2f position)
-{
+void Animation::draw(const ofVec2f& position) {
     images[frame].draw(position);
 }

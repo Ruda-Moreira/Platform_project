@@ -13,7 +13,7 @@ public:
 	float frameTime;
 	float time;
 	void update(float secs);
-	void draw(ofVec2f position);
+	void draw(const ofVec2f& position);
 };
 
 #endif

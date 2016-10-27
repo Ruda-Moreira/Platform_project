@@ -21,20 +21,20 @@ private:
 public:
     bool direction;
     
-    TileMap* tileMap;
+    TileMap& tileMap;
 
-    void init(ofVec2f pos, TileMap* tilemap);
+    void init(const ofVec2f& pos, TileMap& tilemap);
     void turnRight();
     void turnLeft();
     void jump();
     void walk();
     void stop();
     void update(float secs);
-    void draw(ofVec2f camera);
-	bool getJumpStatus();
+    void draw(const ofVec2f& camera);
+	bool getJumpStatus() const;
     
-    ofVec2f getHandPosition();    
-	ofVec2f getPosition();
+    ofVec2f getHandPosition() const;    
+	ofVec2f getPosition() const;
 };
 
 

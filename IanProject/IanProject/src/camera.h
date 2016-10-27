@@ -11,7 +11,7 @@ class Camera {
 		float maxX, maxY;
 
 	public:
-		void update(ofVec2f player, ofVec2f background);
+		void update(const ofVec2f& player, const ofVec2f& background);
 
-		ofVec2f getPosition();
+		ofVec2f getPosition() const;
 };

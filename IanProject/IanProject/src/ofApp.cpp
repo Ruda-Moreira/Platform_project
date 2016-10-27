@@ -15,17 +15,17 @@ vector<Shoot*> shoot;
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-	
-	hero.init(tilemap.getSpawnPoint(), &tilemap);
+
+	hero.init(tilemap.getSpawnPoint(), tilemap);
 	tilemap.init();
 }
 
 //--------------------------------------------------------------
 void ofApp::update() {
 	float secs = ofGetLastFrameTime();
-	camera.update(hero.getPosition(), ofVec2f(tilemap.getMapWidth() / 2, tilemap.getMapHeight() / 2));
 	hero.update(secs);
-	
+	camera.update(hero.getPosition(), ofVec2f(tilemap.getMapWidth(), tilemap.getMapHeight()));
+
 	for (int i = 0; i < shoot.size(); i++) {
 		if(shoot[i])
 		shoot[i]->update(secs);

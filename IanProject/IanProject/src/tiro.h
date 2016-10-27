@@ -13,7 +13,7 @@ class Shoot {
     public:
         void init(Hero &hero);
         void update(float secs);
-        void draw(ofVec2f camera);
+        void draw(const ofVec2f& camera) const;
 };
 
 #endif
