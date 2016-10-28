@@ -58,15 +58,16 @@ void Hero::stop() {
 }
 
 void Hero::update(float secs) {
-    
+
     if (!isWalking && !isJumping) {
         walkRight.frame = 0;
         walkLeft.frame = 0;
         
-        ofVec2f posTile = position + ofVec2f(0,TILE);
+        ofVec2f posTile = position + ofVec2f(0, TILE);
         char tile = tileMap.getTileChar(posTile);
-        if(tile != '#' && tile != '/'){
-            position.y += secs * 400;
+
+        if(tile != '#' && tile != '%'){
+            position += secs * 400;
         }
         return;
     }
@@ -79,29 +80,44 @@ void Hero::update(float secs) {
         }
         return;
     }
-    
-    ofVec2f speed(200,0);
-        
-    if (direction == RIGHT) {
-        position += speed * secs;
-        walkRight.update(secs);
-    } else {
-        position -= speed * secs;
-        walkLeft.update(secs);
-    }
-	 
+
+	ofVec2f speed(200, 0);
+
+	if (direction == RIGHT) {
+		position += speed * secs;
+		walkRight.update(secs);
+	}
+	else {
+		position -= speed * secs;
+		walkLeft.update(secs);
+	}
+
+	//-->fora
+	//Y
+	ofVec2f posTile = position + ofVec2f(0, TILE);
+	char tile = tileMap.getTileChar(posTile);
+	if (tile != '#' && tile != '%') {
+		position += secs * 400;
+	}
+	//X
+	ofVec2f posTileX = position + ofVec2f(TILE, 0);
+	char tile = tileMap.getTileChar(posTileX);
+	if (tile != '#' && tile != '%') {
+		if (direction == RIGHT) {
+			position += speed * secs;
+		}
+		else {
+			position -= speed * secs;
+		}
+	}
+	//-->end fora
+
 	if (position.x <= 0) {
 		position.x = 0;
 	}
 	else if (position.x >= tileMap.getMapWidth()) {
 		position.x = tileMap.getMapWidth();
-	}
-    
-    ofVec2f posTile = position + ofVec2f(0,TILE);
-    char tile = tileMap.getTileChar(posTile);
-    if(tile != '#' && tile != '/') {
-        position.y += secs * 400;
-    }
+	}	
 }
 
 void Hero::draw(const ofVec2f& camera) {

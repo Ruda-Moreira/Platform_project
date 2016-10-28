@@ -3,15 +3,16 @@
 #include "tiro.h"
 #include "TileMap.h"
 #include "camera.h"
+#include "ShootManager.h"
 #include <vector>
 
 float before;
 
-
+shootManager shootMng;
 Camera camera;
 TileMap tilemap;
 Hero hero(tilemap);
-vector<Shoot*> shoot;
+
 
 
 //--------------------------------------------------------------
@@ -25,11 +26,7 @@ void ofApp::update() {
 	float secs = ofGetLastFrameTime();
 	hero.update(secs);
 	camera.update(hero.getPosition(), ofVec2f(tilemap.getMapWidth(), tilemap.getMapHeight()));
-
-	for (int i = 0; i < shoot.size(); i++) {
-		if(shoot[i])
-		shoot[i]->update(secs);
-	}
+	shootMng.update(secs);
 }
 
 //--------------------------------------------------------------
@@ -37,10 +34,7 @@ void ofApp::draw() {
 
 	tilemap.draw(camera.getPosition(), hero.getPosition());
 	hero.draw(camera.getPosition());
-	for (int i = 0; i < shoot.size(); i++) {
-        if(shoot[i])
-		shoot[i]->draw(camera.getPosition());
-	}	
+	shootMng.draw(camera.getPosition());
 }
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
@@ -52,10 +46,8 @@ void ofApp::keyPressed(int key) {
 		hero.turnLeft();
 		hero.walk();
 	}
-	if (key == 'e') {
-		Shoot* s = new Shoot();
-		s->init(hero);
-		shoot.push_back(s);
+	if (key == 'e' || key == 'E') {
+		shootMng.shooting(hero);
 	}
 	if (key == 'w') {
 		hero.jump();
