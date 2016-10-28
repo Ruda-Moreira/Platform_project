@@ -7,17 +7,17 @@
 
 float before;
 
-Hero hero;
+
 Camera camera;
 TileMap tilemap;
+Hero hero(tilemap);
 vector<Shoot*> shoot;
 
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-
-	hero.init(tilemap.getSpawnPoint(), tilemap);
-	tilemap.init();
+    hero.init();
+    tilemap.init();
 }
 
 //--------------------------------------------------------------

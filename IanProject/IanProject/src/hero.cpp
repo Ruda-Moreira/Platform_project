@@ -2,9 +2,13 @@
 #include "hero.h"
 //#include "animation.h"
 
-void Hero::init(const ofVec2f& pos, TileMap& tilemap) {
+Hero::Hero(TileMap& map) : tileMap(map) {
+    
+}
+
+void Hero::init() {
     life = 10;
-    position = pos;
+    position = tileMap.getSpawnPoint();
     isJumping = false;
 
     walkRight.images = new ofImage[3];
@@ -28,8 +32,6 @@ void Hero::init(const ofVec2f& pos, TileMap& tilemap) {
     walkLeft.time = 0;
     
     direction = RIGHT;
-    
-    tileMap = tilemap;
 }
 
 void Hero::turnRight() {
@@ -63,7 +65,7 @@ void Hero::update(float secs) {
         
         ofVec2f posTile = position + ofVec2f(0,TILE);
         char tile = tileMap.getTileChar(posTile);
-        if(tile != '#'){
+        if(tile != '#' && tile != '/'){
             position.y += secs * 400;
         }
         return;
@@ -87,7 +89,7 @@ void Hero::update(float secs) {
         position -= speed * secs;
         walkLeft.update(secs);
     }
-	//acertei pro player não cair mais pra trás rs
+	 
 	if (position.x <= 0) {
 		position.x = 0;
 	}
@@ -97,7 +99,7 @@ void Hero::update(float secs) {
     
     ofVec2f posTile = position + ofVec2f(0,TILE);
     char tile = tileMap.getTileChar(posTile);
-    if(tile != '#' || tile != '/'){
+    if(tile != '#' && tile != '/') {
         position.y += secs * 400;
     }
 }

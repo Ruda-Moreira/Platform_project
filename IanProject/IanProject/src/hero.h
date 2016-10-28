@@ -23,7 +23,8 @@ public:
     
     TileMap& tileMap;
 
-    void init(const ofVec2f& pos, TileMap& tilemap);
+    Hero(TileMap& map);
+    void init();
     void turnRight();
     void turnLeft();
     void jump();
