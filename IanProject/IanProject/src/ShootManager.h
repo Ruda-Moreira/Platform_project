@@ -10,13 +10,10 @@ class shootManager {
 		vector<Shoot*> tiro;
 
 	public:
-
-		Shoot& shoot;
-
-		shootManager(Shoot& shoot);
+		shootManager();
 		void update(float secs);
 		void draw(const ofVec2f& camera) const;
-		shootManager::~shootManager();
+		~shootManager();
 
 		void shooting(Hero& hero);
 };

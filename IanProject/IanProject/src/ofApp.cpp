@@ -42,7 +42,7 @@ void ofApp::keyPressed(int key) {
 		hero.turnRight();
 		hero.walk();
 	}
-	if (key == OF_KEY_LEFT) {
+	else if (key == OF_KEY_LEFT) {
 		hero.turnLeft();
 		hero.walk();
 	}

@@ -1,6 +1,6 @@
 #include "ShootManager.h"
 
-shootManager::shootManager(Shoot& shoot) : shoot(shoot) {
+shootManager::shootManager() {
 
 }
 
