@@ -7,7 +7,7 @@ void TileMap::init() {
 	
 	position = ofVec2f(0, 0);
 
-	background.load("img/bg.jpg");
+	background.load("img/background.png");
 	textBox.load("img/box.png");
 	tiles = new ofImage[255];
 	tiles['!'].load("img/tile1.png");

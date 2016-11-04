@@ -4,16 +4,16 @@
 #include "hero.h"
 #include "tiro.h"
 
-class shootManager {
+class ShootManager {
 
-	private:
-		vector<Shoot*> tiro;
+private:
+	vector<Shoot*> tiro;
 
-	public:
-		shootManager();
-		void update(float secs);
-		void draw(const ofVec2f& camera) const;
-		~shootManager();
+public:
+	ShootManager();
+	void update(float secs);
+	void draw(const ofVec2f& camera) const;
+	~ShootManager();
 
-		void shooting(Hero& hero);
+	void shooting(Hero& hero);
 };

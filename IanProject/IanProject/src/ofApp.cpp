@@ -8,7 +8,7 @@
 
 float before;
 
-shootManager shootMng;
+ShootManager shootMng;
 Camera camera;
 TileMap tilemap;
 Hero hero(tilemap);
@@ -42,7 +42,7 @@ void ofApp::keyPressed(int key) {
 		hero.turnRight();
 		hero.walk();
 	}
-	else if (key == OF_KEY_LEFT) {
+	if (key == OF_KEY_LEFT) {
 		hero.turnLeft();
 		hero.walk();
 	}
@@ -59,9 +59,9 @@ void ofApp::keyPressed(int key) {
 }
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key) {
-	if (key == OF_KEY_LEFT || key == OF_KEY_RIGHT) {
+	/*if (key == OF_KEY_LEFT || key == OF_KEY_RIGHT) {
 		hero.stop();
-	}
+	}*/
 }
 
 //--------------------------------------------------------------

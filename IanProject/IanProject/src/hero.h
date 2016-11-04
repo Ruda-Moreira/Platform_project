@@ -14,8 +14,8 @@ private:
     int life;
     Animation walkLeft;
     Animation walkRight;
-    Animation jumpRight;
-    Animation jumpLeft;
+	Animation jumpLeft;
+	Animation jumpRight;
     
     bool isWalking;
     bool isJumping;
