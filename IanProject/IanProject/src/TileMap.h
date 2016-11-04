@@ -1,7 +1,7 @@
 #ifndef TileMap_h
 #define TileMap_h
 #include "ofApp.h"
-#define WIDTH 35
+#define WIDTH 40
 #define HEIGHT 16
 #define TILE 64
 
@@ -11,28 +11,29 @@ public:
 	//declarei aqui a imagem do bg
 	ofImage background;
 	ofImage textBox;
+	ofImage house;
 	ofVec2f position;
 	ofVec2f spawnPoint;
 
 	bool textBoxCheck;
 
 	char map[HEIGHT][WIDTH] = {
-		"                                  ",
-		"                                  ",
-		"                                  ",
-		"             %%%%%%%%%%%%%%%%     ",
-		"             %              %     ",
-		"             %              %     ",
-		"             %              %     ",
-		"             %  //  //  //  %     ",
-		"         ##  %%%%%%%%%%%%%%%%     ",
-		"  *p         %              %     ",
-		"######       %              %     ",
-		"             %              %     ",
-		"  $*     $!* %   //    //   %     ",
-		"##################################",
-		"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
-		"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" };
+		"                                      ",
+		"                                      ",
+		"                       %%%%%%%%%%%%    ",
+		"                       %          %    ",
+		"                       %          %    ",
+		"             %%%%%%%%%%%%%%%%%%%%%%    ",
+		"             %                    %	   ",
+		"             %                    %    ",
+		"         ##  %                    %    ",
+		"  *p         %%%%%%%%%%%%%%%%%%%%%%    ",
+		"######       %                    %    ",
+		"                                  %    ",
+		"  $*     $!*                      %    ",
+		"#######################################",
+		"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+		"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" };
 
 	void draw(const ofVec2f& camera, const ofVec2f& heroPos);
 	void init();

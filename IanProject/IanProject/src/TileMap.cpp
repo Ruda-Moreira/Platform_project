@@ -7,7 +7,8 @@ void TileMap::init() {
 	
 	position = ofVec2f(0, 0);
 
-	background.load("img/background.png");
+	background.load("img/bg.jpg");
+	house.load("img/house.png");
 	textBox.load("img/box.png");
 	tiles = new ofImage[255];
 	tiles['!'].load("img/tile1.png");
@@ -22,6 +23,7 @@ void TileMap::init() {
 void TileMap::draw(const ofVec2f& camera, const ofVec2f& heroPos) {
 
 	background.draw(position);
+	house.draw(832 - camera.x, 192 - camera.y);
 
 	for (int i = 0; i < HEIGHT; i++) {
 		for (int j = 0; j < WIDTH; j++) {

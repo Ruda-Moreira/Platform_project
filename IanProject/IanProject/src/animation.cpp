@@ -11,7 +11,7 @@ void Animation::update(float secs) {
     time += secs;
     if (time >= frameTime) {
         time = 0;
-        if (frame == images.size()) {
+        if (frame == images.size() - 1) {
             if (repeat) {
                 frame = 0;
             }
