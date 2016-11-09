@@ -9,9 +9,9 @@
 #define LEFT false
 
 class Hero {
+
 private:
     ofVec2f position;
-    int life;
     Animation walkLeft;
     Animation walkRight;
 	Animation jumpLeft;
@@ -34,6 +34,7 @@ public:
     void stop();
     void update(float secs);
     void draw(const ofVec2f& camera);
+	bool isAlive();
 	bool getJumpStatus() const;
     
     ofVec2f getHandPosition() const;    

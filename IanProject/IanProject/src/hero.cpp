@@ -7,7 +7,7 @@ Hero::Hero(TileMap& map) : tileMap(map) {
 }
 
 void Hero::init() {
-    life = 10;
+
     position = tileMap.getSpawnPoint();
     isJumping = false;
 
@@ -136,6 +136,10 @@ void Hero::draw(const ofVec2f& camera) {
 		}
 	}
 
+}
+
+bool Hero::isAlive() {
+	return true;
 }
 
 bool Hero::getJumpStatus() const {
