@@ -19,17 +19,21 @@ void Hero::init() {
     walkLeft.addFrame("img/P5.png");
     walkLeft.addFrame("img/P6.png");
 
+	jumpRight.addFrame("img/IdleR.png");
 	jumpRight.addFrame("img/jumpR1.png");
 	jumpRight.addFrame("img/jumpR2.png");
 	jumpRight.addFrame("img/jumpR3.png");
 	jumpRight.addFrame("img/jumpR4.png");
 	jumpRight.addFrame("img/jumpR5.png");
+	jumpRight.addFrame("img/IdleR.png");
 
+	jumpLeft.addFrame("img/IdleL.png");
 	jumpLeft.addFrame("img/jumpL1.png");
 	jumpLeft.addFrame("img/jumpL2.png");
 	jumpLeft.addFrame("img/jumpL3.png");
 	jumpLeft.addFrame("img/jumpL4.png");
 	jumpLeft.addFrame("img/jumpL5.png");
+	jumpLeft.addFrame("img/IdleL.png");
     
     direction = RIGHT;
 }
@@ -55,6 +59,10 @@ void Hero::jump() {
 }
 
 void Hero::stop() {
+	walkRight.setFrame(0);
+	walkLeft.setFrame(0);
+	jumpRight.setFrame(0);
+	jumpLeft.setFrame(0);
     isWalking = false;
 }
 
@@ -73,7 +81,7 @@ void Hero::update(float secs) {
 	if (isJumping) {
 		position.y -= secs * 400;
 		jumpTime += secs;
-		if (jumpTime > 0.3) {
+		if (jumpTime > 0.5) {
 			isJumping = false;
 		}
 		jumpRight.update(secs);
@@ -121,17 +129,21 @@ void Hero::draw(const ofVec2f& camera) {
 
 	if (!isJumping) {
 		if (direction == RIGHT) {
+			walkRight.setFrameTime(0.3f);
 			walkRight.draw(drawPlayer);
 		}
 		else {
+			walkLeft.setFrameTime(0.3f);
 			walkLeft.draw(drawPlayer);
 		}
 	}
 	else {
 		if (direction == RIGHT) {
+			jumpRight.setFrameTime(0.1f);
 			jumpRight.draw(drawPlayer);
 		}
 		else {
+			jumpLeft.setFrameTime(0.1f);
 			jumpLeft.draw(drawPlayer);
 		}
 	}

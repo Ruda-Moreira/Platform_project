@@ -17,8 +17,8 @@ Hero hero(tilemap);
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-    hero.init();
-    tilemap.init();
+	hero.init();
+	tilemap.init();
 }
 
 //--------------------------------------------------------------
@@ -49,19 +49,48 @@ void ofApp::keyPressed(int key) {
 	if (key == 'e' || key == 'E') {
 		shootMng.shooting(hero);
 	}
-	if (key == 'w') {
+	if (key == 'w' || key == 'W') {
 		hero.jump();
 	}
-	if (key == 'r') {
-		if(tilemap.getTileChar(hero.getPosition()) == '/')
-		tilemap.textBoxActive();
+	if (key == 'r' || key == 'R') {
+		//AHAM EU SEI QUE ISSO AQUI FICOU LINDO 
+		if (tilemap.getTileChar(hero.getPosition()) == '/') {
+			tilemap.textBoxActive(0);
+		}
+		if (tilemap.getTileChar(hero.getPosition()) == '<') {
+			tilemap.textBoxActive(1);
+		}
+		if (tilemap.getTileChar(hero.getPosition()) == '>') {
+			tilemap.textBoxActive(2);
+		}
+		if (tilemap.getTileChar(hero.getPosition()) == '^') {
+			tilemap.textBoxActive(3);
+		}
+		if (tilemap.getTileChar(hero.getPosition()) == '~') {
+			tilemap.textBoxActive(4);
+		}
+		if (tilemap.getTileChar(hero.getPosition()) == '-') {
+			tilemap.textBoxActive(5);
+		}
+		if (tilemap.getTileChar(hero.getPosition()) == '_') {
+			tilemap.textBoxActive(6);
+		}
+		if (tilemap.getTileChar(hero.getPosition()) == '=') {
+			tilemap.textBoxActive(7);
+		}
+		if (tilemap.getTileChar(hero.getPosition()) == '+') {
+			tilemap.textBoxActive(8);
+		}
+		if (tilemap.getTileChar(hero.getPosition()) == ']') {
+			tilemap.textBoxActive(9);
+		}			
 	}
 }
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key) {
-	/*if (key == OF_KEY_LEFT || key == OF_KEY_RIGHT) {
+	if (key == OF_KEY_LEFT || key == OF_KEY_RIGHT) {
 		hero.stop();
-	}*/
+	}
 }
 
 //--------------------------------------------------------------
