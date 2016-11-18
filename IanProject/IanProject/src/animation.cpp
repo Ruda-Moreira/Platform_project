@@ -10,7 +10,6 @@ Animation::Animation() {
 void Animation::update(float secs) {
     time += secs;
     if (time >= frameTime) {
-		cout << frameTime << endl;
         time = 0;
         if (frame == images.size() - 1) {
             if (repeat) {
@@ -30,8 +29,13 @@ void Animation::draw(const ofVec2f& position) {
 	}
 }
 
+void Animation::reset(){
+    frame = 0;
+    time = 0;
+}
+
 void Animation::addFrame(string image) {
-	img = new ofImage();
+	ofImage* img = new ofImage();
 	img->load(image);
 	images.push_back(img);
 }
@@ -44,6 +48,6 @@ void Animation::setFrameTime(float f_time) {
 	frameTime = f_time;
 }
 
-const ofVec2f& Animation::getFrameSize() const {
-	return ofVec2f(img->getWidth(), img->getHeight());
+ofVec2f Animation::getFrameSize() const {
+	return ofVec2f(images[0]->getWidth(), images[0]->getHeight());
 }

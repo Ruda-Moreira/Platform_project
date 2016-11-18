@@ -46,7 +46,7 @@ void TileMap::draw(const ofVec2f& camera, const ofVec2f& heroPos) {
 
 	background.draw(position);
 	house.draw(832 - camera.x, 192 - camera.y);
-	door.draw(827 - camera.x, 704 - camera.y);
+//	door.draw(827 - camera.x, 704 - camera.y);
 
 	for (int i = 0; i < HEIGHT; i++) {
 		for (int j = 0; j < WIDTH; j++) {
@@ -84,6 +84,11 @@ bool TileMap::textBoxActive(int num) {
 	textBoxNum = num;
 	textBoxCheck = !textBoxCheck;
 	return textBoxCheck;
+}
+
+bool TileMap::isSolid(const ofVec2f &position){
+    char tile = getTileChar(position);
+    return tile != '#' && tile != '@' && tile != '%';
 }
 
 char TileMap::getTileChar(const ofVec2f& position) {

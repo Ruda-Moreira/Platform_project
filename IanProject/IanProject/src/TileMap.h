@@ -47,6 +47,7 @@ public:
 	float getMapWidth() const;
 	float getMapHeight() const;
 	bool textBoxActive(int num);
+    bool isSolid(const ofVec2f& position);
 	ofVec2f getSpawnPoint();
 	char getTileChar(const ofVec2f& position);
 
