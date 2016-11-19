@@ -1,13 +1,8 @@
 #include "ofApp.h"
 #include "hero.h"
-#include "tiro.h"
-#include "TileMap.h"
 #include "camera.h"
-#include "GameManager.hpp"
+#include "GameManager.h"
 #include "Keyboard.h"
-#include <vector>
-
-float before;
 
 Camera camera;
 TileMap tilemap;
@@ -71,7 +66,7 @@ void ofApp::keyPressed(int key) {
 }
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key) {
-    KEYS.onRelease(key);
+	KEYS.onRelease(key);
 }
 
 //--------------------------------------------------------------

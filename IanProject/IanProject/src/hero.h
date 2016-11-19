@@ -1,7 +1,5 @@
-#ifndef hero_h
-#define hero_h
+#pragma once
 
-#include "ofApp.h"
 #include "animation.h"
 #include "TileMap.h"
 #include "GameObject.h"
@@ -22,12 +20,12 @@ private:
 	Animation jumpLeft;
 	Animation jumpRight;
     HeroStates state;
-
-    float jumpTime;
-    bool direction;
     TileMap& tileMap;
     ofVec2f position;
-    
+
+	float jumpTime;
+	bool direction;
+
     Animation& getAnimation();
     void testFall();
     void blockBorder();
@@ -49,6 +47,3 @@ public:
     ofVec2f getHandPosition() const;
 	ofVec2f getPosition() const;
 };
-
-
-#endif /* hero_h */

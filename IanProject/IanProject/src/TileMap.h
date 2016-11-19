@@ -1,11 +1,10 @@
 #pragma once
-#include "ofMain.h"
-#include <vector>
-#include "animation.h"
 
 #define WIDTH 60
 #define HEIGHT 16
 #define TILE 64
+
+#include "ofMain.h"
 
 class TileMap {
 public:
@@ -14,8 +13,6 @@ public:
 	ofImage background;
 	vector <ofImage*> textBox;
 	ofImage house;
-//	ofImage door;
-	Animation door;
 	ofVec2f position;
 	ofVec2f spawnPoint;
 

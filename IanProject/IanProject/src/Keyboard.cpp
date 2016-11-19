@@ -8,20 +8,20 @@
 
 #include "Keyboard.h"
 
-Keyboard& Keyboard::instance(){
-    static Keyboard key;
-    return key;
+Keyboard& Keyboard::instance() {
+	static Keyboard key;
+	return key;
 }
 
-void Keyboard::onPress(int key){
-    pressed[key] = true;
+void Keyboard::onPress(int key) {
+	pressed[key] = true;
 }
 
-void Keyboard::onRelease(int key){
-    pressed[key] = false;
+void Keyboard::onRelease(int key) {
+	pressed[key] = false;
 }
 
-bool Keyboard::isPressed(int key){
-    if(pressed.find(key) == pressed.end()) return false;
-    return pressed[key];
+bool Keyboard::isPressed(int key) {
+	if (pressed.find(key) == pressed.end()) return false;
+	return pressed[key];
 }
