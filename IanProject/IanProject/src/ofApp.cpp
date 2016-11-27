@@ -3,66 +3,26 @@
 #include "camera.h"
 #include "GameManager.h"
 #include "Keyboard.h"
-
-Camera camera;
-TileMap tilemap;
-Hero* hero;
-
+#include "Menu.h"
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-    hero = new Hero(tilemap);
-    GAMEMANAGER.add(hero);
-	tilemap.init();
+	manager.init(new Menu());
 }
 
 //--------------------------------------------------------------
 void ofApp::update() {
-	camera.update(hero->getPosition(), ofVec2f(tilemap.getMapWidth(), tilemap.getMapHeight()));
-    GAMEMANAGER.update(ofGetLastFrameTime());
+	manager.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw() {
-	tilemap.draw(camera.getPosition(), hero->getPosition());
-    GAMEMANAGER.draw(camera.getPosition());
+	manager.draw();
 }
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
     KEYS.onPress(key);
-	if (key == 'r' || key == 'R') {
-		//AHAM EU SEI QUE ISSO AQUI FICOU LINDO 
-		if (tilemap.getTileChar(hero->getPosition()) == '/') {
-			tilemap.textBoxActive(0);
-		}
-		if (tilemap.getTileChar(hero->getPosition()) == '<') {
-			tilemap.textBoxActive(1);
-		}
-		if (tilemap.getTileChar(hero->getPosition()) == '>') {
-			tilemap.textBoxActive(2);
-		}
-		if (tilemap.getTileChar(hero->getPosition()) == '^') {
-			tilemap.textBoxActive(3);
-		}
-		if (tilemap.getTileChar(hero->getPosition()) == '~') {
-			tilemap.textBoxActive(4);
-		}
-		if (tilemap.getTileChar(hero->getPosition()) == '-') {
-			tilemap.textBoxActive(5);
-		}
-		if (tilemap.getTileChar(hero->getPosition()) == '_') {
-			tilemap.textBoxActive(6);
-		}
-		if (tilemap.getTileChar(hero->getPosition()) == '=') {
-			tilemap.textBoxActive(7);
-		}
-		if (tilemap.getTileChar(hero->getPosition()) == '+') {
-			tilemap.textBoxActive(8);
-		}
-		if (tilemap.getTileChar(hero->getPosition()) == ']') {
-			tilemap.textBoxActive(9);
-		}			
-	}
+	
 }
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key) {

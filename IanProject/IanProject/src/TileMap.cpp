@@ -5,7 +5,7 @@ void TileMap::init() {
 
 	position = ofVec2f(0, 0);
 
-	background.load("img/bg.jpg");
+	background.load("img/bg.png");
 	house.load("img/house.png");
 
 	textBox.push_back(new ofImage("img/box1.png"));
@@ -20,12 +20,13 @@ void TileMap::init() {
 	textBox.push_back(new ofImage("img/box10.png"));
 
 	tiles = new ofImage[255];
-	tiles['!'].load("img/tile1.png");
-	tiles['#'].load("img/tile2.png");
-	tiles['@'].load("img/tile3.png");
-	tiles['$'].load("img/tile4.png");
-	tiles['*'].load("img/tile5.png");
-	tiles['%'].load("img/tile_test1.png");
+	tiles['!'].load("img/Tile.png");
+	tiles['#'].load("img/Tile_1.png");
+	tiles['c'].load("img/Tile_2.png");
+	tiles['@'].load("img/Ground.png");
+	tiles['$'].load("img/sprite_0.png");
+	tiles['*'].load("img/Bush.png");
+	tiles['%'].load("img/tile_test.png");
 	tiles['/'].load("img/nulltile.png");
 	tiles['<'].load("img/nulltile.png");
 	tiles['>'].load("img/nulltile.png");
@@ -83,9 +84,9 @@ float TileMap::getMapHeight() const {
 	return background.getHeight();
 }
 
-bool TileMap::isSolid(const ofVec2f &position) {
+bool TileMap::isNotSolid(const ofVec2f &position) {
 	char tile = getTileChar(position);
-	return tile != '#' && tile != '@' && tile != '%';
+	return tile != '#' && tile != '@' && tile != '%' && tile != 'c' && tile!= '!';
 }
 
 char TileMap::getTileChar(const ofVec2f& position) {

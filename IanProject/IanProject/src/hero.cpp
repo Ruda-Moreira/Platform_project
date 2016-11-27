@@ -3,6 +3,8 @@
 #include "Keyboard.h"
 #include "GameManager.h"
 
+ofVec2f debugChar;
+ofVec2f of1, of2;
 
 Hero::Hero(TileMap& map) : state(IDLE), direction(RIGHT), tileMap(map), position(tileMap.getSpawnPoint()) {
 
@@ -10,15 +12,20 @@ Hero::Hero(TileMap& map) : state(IDLE), direction(RIGHT), tileMap(map), position
 
 //-------> MÉTODOS PRINCIPAIS
 void Hero::init() {
+
+	///DEBUG
+	of1.set(4, 71);
+	of2.set(62, 71);
+	///
 	walkRight.addFrame("img/IdleR.png");
 	walkRight.addFrame("img/P2.png");
 	walkRight.addFrame("img/P3.png");
-	walkRight.setFrameTime(0.3f);
+	walkRight.setFrameTime(0.15f);
 
 	walkLeft.addFrame("img/IdleL.png");
 	walkLeft.addFrame("img/P5.png");
 	walkLeft.addFrame("img/P6.png");
-	walkLeft.setFrameTime(0.3f);
+	walkLeft.setFrameTime(0.15f);
 
 	jumpRight.addFrame("img/IdleR.png");
 	jumpRight.addFrame("img/jumpR1.png");
@@ -40,16 +47,32 @@ void Hero::init() {
 }
 
 void Hero::update(float secs) {
-
-	ofVec2f speed(300, 0);
+	cout << state;
+	ofVec2f speed(400, 0);
 	switch (state) {
 	case IDLE: {
+
+		if (!tileMap.isNotSolid(position + of2) && !tileMap.isNotSolid(position + of1)) {
+			cout << "deboa";
+			
+		}
+		else if(!tileMap.isNotSolid(position + of2)) {
+			cout << "PRA TRAZ";
+			position -= ofVec2f(1, 0);
+		}
+		else if (!tileMap.isNotSolid(position + of1)) {
+			cout << "PRA FRENTE";
+			position += ofVec2f(1, 0);
+		}
+
 		if (KEYS.isPressed(OF_KEY_UP))
 			jump();
 		if (KEYS.isPressed(OF_KEY_LEFT))
 			walk(LEFT);
-		if (KEYS.isPressed(OF_KEY_RIGHT))
-			walk(RIGHT);
+		if (KEYS.isPressed(OF_KEY_RIGHT)) {
+			if (!tileMap.isNotSolid(position + of2) && !tileMap.isNotSolid(position + of1))
+				walk(RIGHT);
+		}
 
 		testFall();
 		break;
@@ -57,7 +80,7 @@ void Hero::update(float secs) {
 
 	case WALKING: {
 
-		if (KEYS.isPressed(OF_KEY_UP)) {
+		if (KEYS.isPressed(OF_KEY_UP)) { //somente se estiver no chao
 			jump();
 		}
 		else if (KEYS.isPressed(OF_KEY_LEFT)) {
@@ -75,15 +98,15 @@ void Hero::update(float secs) {
 		}
 
 		cout << "walking" << endl;
-		
+
 		testFall();
 		if (direction == RIGHT) {
-			if (tileMap.isSolid(position + ofVec2f(TILE, 0))) {
+			if (tileMap.isNotSolid(position + ofVec2f(TILE, 0))) {
 				position += speed * secs;
 			}
 		}
 		else {
-			if (tileMap.isSolid(position - ofVec2f(TILE, 0))) {
+			if (tileMap.isNotSolid(position)) {
 				position -= speed * secs;
 			}
 		}
@@ -92,14 +115,20 @@ void Hero::update(float secs) {
 	}
 
 	case JUMPING: {
-		position.y -= secs * 400;
+
+		if (!(!tileMap.isNotSolid(position + ofVec2f(4,0)) || !tileMap.isNotSolid(position + ofVec2f(62, 0)))) {
+			position.y -= secs * 400;
+		}
+		
 		jumpTime += secs;
 
 		if (KEYS.isPressed(OF_KEY_LEFT)) {
-			position -= speed * secs;
+			if (tileMap.isNotSolid(position - ofVec2f(2,0)) && tileMap.isNotSolid(position + of1 - ofVec2f(2, 0)))
+				position -= speed * secs;
 		}
 		else if (KEYS.isPressed(OF_KEY_RIGHT)) {
-			position += speed * secs;
+			if (tileMap.isNotSolid(position + ofVec2f(TILE, 0) + ofVec2f(2,0)) && tileMap.isNotSolid(position + of2 + ofVec2f(2, 0)))
+				position += speed * secs;
 		}
 
 		if (jumpTime > 0.5) {
@@ -110,11 +139,19 @@ void Hero::update(float secs) {
 	}
 
 	case FALLING: {
-		if (!tileMap.isSolid(position + ofVec2f(0, TILE))) {
+		//if (!tileMap.isSolid(position + ofVec2f(0, TILE))) {
+		if (!tileMap.isNotSolid(position + of1) || !tileMap.isNotSolid(position + of2)) {
 			state = IDLE;
 		}
 		else
 			position.y += secs * 400;
+		if (KEYS.isPressed(OF_KEY_LEFT)) {
+			position -= speed * secs;
+		}
+		else if (KEYS.isPressed(OF_KEY_RIGHT)) {
+			if (tileMap.isNotSolid(position + of2+ofVec2f(1,0)))
+				position += speed * secs;
+		}
 		break;
 	}
 	}
@@ -124,6 +161,18 @@ void Hero::update(float secs) {
 void Hero::draw(const ofVec2f& camera) {
 	ofVec2f positionToDraw = position - ofVec2f(0, 26) - camera;
 	getAnimation().draw(positionToDraw);
+
+	ofSetColor(ofColor::red);
+	ofDrawCircle(position + of1 - camera, 5);
+	ofSetColor(ofColor::yellow);
+	ofDrawCircle(position + of2 - camera, 5);
+	ofSetColor(ofColor::green);
+	ofDrawCircle(position + ofVec2f(TILE, 0) - camera, 5);
+	ofSetColor(ofColor::blue);
+	ofDrawCircle(position - camera, 5);
+
+
+	ofSetColor(ofColor::white);
 }
 
 //--------> MÉTODOS DE TROCA DE ESTADO
@@ -147,7 +196,11 @@ void Hero::stop() {
 }
 
 void Hero::testFall() {
-	if (tileMap.isSolid(position + ofVec2f(0, TILE))) {
+	//if (tileMap.isSolid(position + ofVec2f(0, TILE))) {
+	bool e1 = tileMap.isNotSolid(position + of1);
+	bool e2 = tileMap.isNotSolid(position + of2);
+	if (e1 && e2) 
+	{
 		state = FALLING;
 		getAnimation().reset();
 	}

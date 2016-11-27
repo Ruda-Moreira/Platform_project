@@ -1,7 +1,7 @@
 #pragma once
 
-#define WIDTH 60
-#define HEIGHT 16
+#define WIDTH 120
+#define HEIGHT 17
 #define TILE 64
 
 #include "ofMain.h"
@@ -20,31 +20,33 @@ public:
 	int textBoxNum;
 
 	char map[HEIGHT][WIDTH] = {
-		"                                                           ",
-		"                                                           ",
-		"                       %%%%%%%%%%%%                        ",
-		"                       %          %                        ",
-		"                       %  _ =  ++ %                        ",
-		"             %%%%%%%%%%%%%%%%%%%%%%                        ",
-		"             %                    %                        ",
-		"             %                    %                        ",
-		"         ##  %      --          ~ %                        ",
-		"  *p         %%%%%%%%%%%%%%%%%%%%%%                 *      ",
-		"######       %                    %                ###     ",
-		"                                  %                        ",
-		"  $*     $!*   /  <  >> ^^        %*  $*    *   !*       ##",
-		"###################################################        ",
-		"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@        ",
-		"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@        " };
+		"                                                                                                                       ",
+		"                                                                                                                       ",
+		"                                                                                                                       ",
+		"                        %%%%%%%%%%%                                                                                    ",
+		"                        %  _ =  ++%                                                                                    ",
+		"             %%%%%%%%%%%%%%%%%%%%%%                                                                                    ",
+		"             %                    %                                                                                    ",
+		"             %                    %                                                                                    ",
+		"             %      --          ~ %                                                                                    ",
+		"             %%%%%%%%%%%%%%%%%%%%%%                                                                                    ",
+		"             %                    %                                             #!c#!                                  ",                   
+		"                                                                                                                       ",
+		"  $*  p  $*   /  <  >> ^^        %*  $*    *        *    $$           *         * $            $           *           ",
+		"##!c!!c#cc#!cc#!cc###!!##c!!c#cc#!cc#!##!c!!#c#!##!c!#c#!!#!#!cc#!c#!cc#c!##!c!##!c!#cc!cc!c##c!#c!c##c#!#cc#c#!c!     ",
+		"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     ",
+		"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     ",
+		"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@     " };
 
-	void draw(const ofVec2f& camera, const ofVec2f& heroPos);
+	
 	void init();
+	void draw(const ofVec2f& camera, const ofVec2f& heroPos);
 	float getTextBoxWidth() const;
 	float getTextBoxHeight() const;
 	float getMapWidth() const;
 	float getMapHeight() const;
 	bool textBoxActive(int num);
-    bool isSolid(const ofVec2f& position);
+    bool isNotSolid(const ofVec2f& position);
 	ofVec2f getSpawnPoint();
 	char getTileChar(const ofVec2f& position);
 
