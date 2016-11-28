@@ -5,9 +5,12 @@ void Menu::init() {
 	next = this;
 
 	background.load("img/Book2.png");
-	posButtonCredits.set(350, 600);
-	posButtonEnter.set(50, background.getHeight() / 2);
-	posButtonExit.set(650, background.getHeight() / 2);
+	sound.load("audio/percys-theme.mp3");
+	sound.play();
+	sound.setLoop(true);
+	posButtonCredits.set(500, 600);
+	posButtonEnter.set(150, background.getHeight() / 2);
+	posButtonExit.set(880, background.getHeight() / 2);
 
 	Button* enter = new Button(posButtonEnter, "img/start.png", "img/start2.png");
 	Button* credits = new Button(posButtonCredits, "img/credits.png", "img/credits2.png");

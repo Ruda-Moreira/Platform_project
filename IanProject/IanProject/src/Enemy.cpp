@@ -1,43 +1,32 @@
 #include "Enemy.h"
 
-Enemy::Enemy(const ofVec2f& end) : stopPoint(end) {}
+Enemy::Enemy(const ofVec2f& start, const ofVec2f& end,
+	const Animation& walkRight, const Animation& walkLeft, const Animation& throwRight, const Animation& throwLeft) 
+	: startPos(start), stopPos(end), walkRight(walkRight), walkLeft(walkLeft), attackRight(throwRight), attackLeft(throwLeft) {}
 
 void Enemy::init() {
 	dir = false;
-	position.set(1600, 712);
-	walkLeft.addFrame("img/walkLeft.png");
-	walkLeft.addFrame("img/walkLeft1.png");
-	walkLeft.addFrame("img/walkLeft2.png");
-	walkLeft.addFrame("img/walkLeft3.png");
-	walkLeft.setFrameTime(0.3f);
+	position = startPos;
 
-	walkRight.addFrame("img/walkRight.png");
-	walkRight.addFrame("img/walkRight1.png");
-	walkRight.addFrame("img/walkRight2.png");
-	walkRight.addFrame("img/walkRight3.png");
-	walkRight.setFrameTime(0.3f);
 }
 
 void Enemy::draw(const ofVec2f& camera) {
 	if (!dir) {
 		walkLeft.draw(position - camera);
-	} else
-	walkRight.draw(position - camera);
+	}
+	else {
+		walkRight.draw(position - camera);
+	}
 }
 
 void Enemy::update(float secs) {
-	ofVec2f oldPos = position;
-	float distance = (stopPoint - position).length();
-	if (!dir) {
-		direction = (stopPoint - position).normalize();
-		position += direction * 200 * secs;
-		walkLeft.update(secs);
-	}else if (distance < 5) {
-		dir = true;
-		direction += (position - stopPoint).normalize();
-		position -= direction * 200 * secs;
-		walkRight.update(secs);
-	}
+	ofVec2f path = (dir ? stopPos : startPos) - position;
+	float distance = path.length();
+	direction = path.normalize();
+	position += direction * 200 * secs;
+	(dir ? walkRight : walkLeft).update(secs);
+	if (distance < 5)
+		dir = !dir;
 }
 
 bool Enemy::isAlive() const {

@@ -7,16 +7,22 @@
 #include "Button.h"
 #include "TileMap.h"
 #include "Enemy.h"
+#include "animation.h"
 
 class Game : public Screen {
 private:
 	Hero* hero;
-	Enemy* enemy;
+	Enemy* enemy[3];
 	TileMap tilemap;
 	ofImage background;
+	ofSoundPlayer music;
+	Animation door;
 	ofVec2f direction;
 	Camera camera;
 	vector<Button*> buttons;
+
+	Animation walkLeftRed, walkRightRed, throwLeftRed, throwRightRed;
+	Animation walkLeftBlue, walkRightBlue, throwLeftBlue, throwRightBlue;
 
 	float count;
 public:

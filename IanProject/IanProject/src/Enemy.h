@@ -6,7 +6,8 @@
 class Enemy : public GameObject{
 private:
 	ofVec2f position;
-	ofVec2f stopPoint;
+	ofVec2f startPos;
+	ofVec2f stopPos;
 	ofVec2f direction;
 	Animation walkRight;
 	Animation walkLeft;
@@ -15,7 +16,8 @@ private:
 
 	bool dir;
 public:
-	Enemy(const ofVec2f& end);
+	Enemy(const ofVec2f& start, const ofVec2f& end, 
+		const Animation& walkRight, const Animation& walkLeft, const Animation& throwRight, const Animation& throwLeft);
 	void init();
 	bool isAlive() const;
 	void draw(const ofVec2f& camera);
