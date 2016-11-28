@@ -11,7 +11,7 @@ void Animation::update(float secs) {
     time += secs;
     if (time >= frameTime) {
         time = 0;
-        if (frame == images.size() - 1) {
+        if (isLastFrame()) {
             if (repeat) {
                 frame = 0;
             }
@@ -46,6 +46,10 @@ void Animation::setFrame(int _frame) {
 
 void Animation::setFrameTime(float f_time) {
 	frameTime = f_time;
+}
+
+bool Animation::isLastFrame() const{
+    return frame == images.size() - 1;
 }
 
 ofVec2f Animation::getFrameSize() const {

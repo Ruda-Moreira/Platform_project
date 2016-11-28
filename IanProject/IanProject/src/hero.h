@@ -24,6 +24,7 @@ private:
     ofVec2f position;
 
 	float jumpTime;
+    float cooldown;
 	bool direction;
 
     Animation& getAnimation();

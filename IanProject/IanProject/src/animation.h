@@ -22,6 +22,7 @@ public:
 	void addFrame(string image);
 	void setFrameTime(float f_time);
 	void setFrame(int _frame);
+    bool isLastFrame() const;
 	ofVec2f getFrameSize() const;
 };
 

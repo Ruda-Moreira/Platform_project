@@ -7,16 +7,19 @@
 
 class Shoot : public GameObject {
     private:
-        ofImage snowball;
+        ofImage shoot;
         ofVec2f position;
         bool direction;
+        bool enemy;
+        bool alive;
 		
     public:
-        Shoot(const ofVec2f& position, bool direction);
+        Shoot(const ofVec2f& position, bool direction, bool enemy);
         void init();
         void update(float secs);
         void draw(const ofVec2f& camera);
         bool isAlive() const;
+        bool isEnemy() const;
         ofRectangle bounds();
         void collidedWith(GameObject* other);
 

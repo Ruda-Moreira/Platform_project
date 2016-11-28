@@ -26,7 +26,7 @@ void TileMap::init() {
 	tiles['@'].load("img/Ground.png");
 	tiles['$'].load("img/sprite_0.png");
 	tiles['*'].load("img/Bush.png");
-	tiles['%'].load("img/tile_test.png");
+	tiles['%'].load("img/tile_test1.png");
 	tiles['/'].load("img/nulltile.png");
 	tiles['<'].load("img/nulltile.png");
 	tiles['>'].load("img/nulltile.png");

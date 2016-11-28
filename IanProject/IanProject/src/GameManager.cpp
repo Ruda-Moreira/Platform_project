@@ -24,12 +24,12 @@ void GameManager::update(float secs)
     std::swap(toDelete, dead);
     
     //Para cada objeto object em objects
-    for (GameObject* object : objects) {
-        object->update(secs);
-        if (!object->isAlive()) {
-            dead.push_back(object);
+    for (int i = 0; i < objects.size(); i++) {
+        objects[i]->update(secs);
+        if (!objects[i]->isAlive()) {
+            dead.push_back(objects[i]);
         } else {
-            alive.push_back(object);
+            alive.push_back(objects[i]);
         }
     }
     

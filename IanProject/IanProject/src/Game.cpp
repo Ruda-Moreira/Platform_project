@@ -78,11 +78,11 @@ void Game::init() {
 
 	hero = new Hero(tilemap);
 	enemy[0] = new Enemy(ofVec2f(3600, 712), ofVec2f(4000, 712), 
-		walkRightRed, walkLeftRed, throwRightRed, throwLeftRed);
+		walkRightRed, walkLeftRed, throwRightRed, throwLeftRed, *hero);
 	enemy[1] = new Enemy(ofVec2f(4500, 712), ofVec2f(4900, 712),
-		walkRightRed, walkLeftRed, throwRightRed, throwLeftRed);
+		walkRightRed, walkLeftRed, throwRightRed, throwLeftRed, *hero);
 	enemy[2] = new Enemy(ofVec2f(5500, 712), ofVec2f(5900, 712),
-		walkRightBlue, walkLeftBlue, throwRightBlue, throwLeftBlue);
+		walkRightBlue, walkLeftBlue, throwRightBlue, throwLeftBlue, *hero);
 	GAMEMANAGER.add(enemy[0]);
 	GAMEMANAGER.add(enemy[1]);
 	GAMEMANAGER.add(enemy[2]);

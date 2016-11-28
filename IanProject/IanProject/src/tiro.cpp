@@ -1,16 +1,19 @@
 #include <stdio.h>
 #include "tiro.h"
+#include "Enemy.h"
+#include "Hero.h"
 
 //primeira classe que eu fiz sozinha hehe :3
 
-Shoot::Shoot(const ofVec2f& position, bool direction) : position(position), direction(direction) {}
+Shoot::Shoot(const ofVec2f& position, bool direction, bool enemy) : position(position), direction(direction), enemy(enemy) {}
 
 void Shoot::init() {
-	snowball.load("img/snowball.png");
+    shoot.load(enemy? "img/bola.png" : "img/shoot.png");
+    alive = true;
 }
 
 void Shoot::update(float secs) {
-		ofVec2f speed(300, 0);
+		ofVec2f speed(600, 0);
         if (direction == RIGHT) {
             position += speed * secs;
         }
@@ -19,20 +22,33 @@ void Shoot::update(float secs) {
         }
 }
 void Shoot::draw(const ofVec2f& camera) {
-	snowball.draw(position - camera);
+	shoot.draw(position - camera);
 }
 
-bool Shoot::isAlive() const{
-    if (position.x > 3000 || position.x < 0) {
+bool Shoot::isAlive() const {
+    if (position.x > 10000 || position.x < 0) {
         return false;
     }
-    return true;
+    return alive;
 }
 
 ofRectangle Shoot::bounds(){
-    return ofRectangle(position, snowball.getWidth(), snowball.getHeight());
+    return ofRectangle(position, shoot.getWidth(), shoot.getHeight());
 }
 
 void Shoot::collidedWith(GameObject* other){
-    
+    Enemy *enemy = dynamic_cast<Enemy*>(other);
+    if(enemy && !isEnemy()){
+        alive = false;
+        return;
+    }
+    Hero *hero = dynamic_cast<Hero*>(other);
+    if (hero && isEnemy()){
+        alive = false;
+        return;
+    }
+}
+
+bool Shoot::isEnemy() const {
+    return enemy;
 }

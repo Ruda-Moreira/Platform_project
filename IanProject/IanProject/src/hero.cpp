@@ -12,6 +12,8 @@ Hero::Hero(TileMap& map) : state(IDLE), direction(RIGHT), tileMap(map), position
 
 //-------> MÉTODOS PRINCIPAIS
 void Hero::init() {
+    
+    cooldown = 10;
 
 	///DEBUG
 	of1.set(4, 71);
@@ -47,6 +49,7 @@ void Hero::init() {
 }
 
 void Hero::update(float secs) {
+    cooldown += secs;
 	cout << state;
 	ofVec2f speed(400, 0);
 	switch (state) {
@@ -155,24 +158,17 @@ void Hero::update(float secs) {
 		break;
 	}
 	}
+    if(KEYS.isPressed('X') || KEYS.isPressed('x')){
+        if(cooldown > 1) {
+            shoot();
+        }
+    }
 	blockBorder();
 }
 
 void Hero::draw(const ofVec2f& camera) {
 	ofVec2f positionToDraw = position - ofVec2f(0, 26) - camera;
 	getAnimation().draw(positionToDraw);
-
-	ofSetColor(ofColor::red);
-	ofDrawCircle(position + of1 - camera, 5);
-	ofSetColor(ofColor::yellow);
-	ofDrawCircle(position + of2 - camera, 5);
-	ofSetColor(ofColor::green);
-	ofDrawCircle(position + ofVec2f(TILE, 0) - camera, 5);
-	ofSetColor(ofColor::blue);
-	ofDrawCircle(position - camera, 5);
-
-
-	ofSetColor(ofColor::white);
 }
 
 //--------> MÉTODOS DE TROCA DE ESTADO
@@ -199,8 +195,7 @@ void Hero::testFall() {
 	//if (tileMap.isSolid(position + ofVec2f(0, TILE))) {
 	bool e1 = tileMap.isNotSolid(position + of1);
 	bool e2 = tileMap.isNotSolid(position + of2);
-	if (e1 && e2) 
-	{
+	if (e1 && e2) {
 		state = FALLING;
 		getAnimation().reset();
 	}
@@ -208,7 +203,8 @@ void Hero::testFall() {
 
 //--------> MÉTODOS DE INTERAÇÃO
 void Hero::shoot() {
-	GAMEMANAGER.add(new Shoot(getHandPosition(), direction));
+	GAMEMANAGER.add(new Shoot(getHandPosition(), direction, false));
+    cooldown = 0;
 }
 
 void Hero::blockBorder() {
@@ -221,7 +217,10 @@ void Hero::blockBorder() {
 }
 
 void Hero::collidedWith(GameObject* other) {
-
+    Shoot *shoot = dynamic_cast<Shoot*>(other);
+    if(shoot && shoot->isEnemy()){
+        position = tileMap.getSpawnPoint();
+    }
 }
 
 //--------> MÉTODOS DE COMUNICAÇÃO (GETTERS - SETTERS)
